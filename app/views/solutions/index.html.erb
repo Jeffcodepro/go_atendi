@@ -1,2 +1,149 @@
-<h1>Solutions#index</h1>
-<p>Find me in app/views/solutions/index.html.erb</p>
+<% content_for :page_title, "Soluções" %>
+<% content_for :meta_description, "Conheça as soluções do GO ATendi para captação, qualificação, pré-atendimento e organização comercial." %>
+
+<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      <span class="eyebrow">Soluções</span>
+
+      <h1>
+        Soluções para empresas que recebem muitos contatos e precisam vender melhor
+      </h1>
+
+      <p>
+        O GO ATendi ajuda sua empresa a transformar mensagens soltas em uma
+        operação mais organizada, com automação, direcionamento e acompanhamento.
+      </p>
+
+      <%= link_to "Quero conhecer", inscricao_path(interest: "solucoes"), class: "btn btn--primary btn--large" %>
+    </div>
+
+    <div class="page-hero__panel">
+      <strong>Ideal para</strong>
+
+      <ul>
+        <li>Empresas que atendem pelo WhatsApp</li>
+        <li>Times comerciais com muitos leads</li>
+        <li>Negócios que precisam responder mais rápido</li>
+        <li>Operações que querem reduzir retrabalho</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Aplicações</span>
+      <h2>Onde o GO ATendi pode ajudar sua empresa</h2>
+    </div>
+
+    <div class="cards-grid cards-grid--three">
+      <article class="feature-card">
+        <div class="feature-card__icon">01</div>
+        <h3>Captação de leads</h3>
+        <p>
+          Receba contatos vindos de campanhas, site ou redes sociais e organize
+          dados importantes desde a primeira interação.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">02</div>
+        <h3>Pré-atendimento automatizado</h3>
+        <p>
+          Responda dúvidas frequentes, colete informações e direcione o cliente
+          antes que ele chegue ao atendimento humano.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">03</div>
+        <h3>Organização comercial</h3>
+        <p>
+          Dê mais contexto para o time comercial acompanhar oportunidades,
+          priorizar contatos e reduzir perda de leads.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">04</div>
+        <h3>Agendamento</h3>
+        <p>
+          Ajude clientes a escolherem horários, registrar interesse e avançar
+          para o próximo passo com menos troca manual de mensagens.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">05</div>
+        <h3>Suporte inicial</h3>
+        <p>
+          Crie respostas padronizadas para dúvidas simples e envie casos mais
+          específicos para a pessoa certa.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">06</div>
+        <h3>Relacionamento</h3>
+        <p>
+          Mantenha uma comunicação mais profissional com clientes que ainda
+          não estão prontos para comprar no primeiro contato.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container split-section">
+    <div class="split-section__content">
+      <span class="eyebrow">Operação mais clara</span>
+      <h2>O atendimento deixa de depender apenas de mensagens manuais</h2>
+      <p>
+        Com fluxos bem definidos, sua empresa consegue padronizar o primeiro
+        atendimento, reduzir falhas e tornar o processo comercial mais previsível.
+      </p>
+    </div>
+
+    <div class="process-card">
+      <div class="process-step">
+        <span>1</span>
+        <div>
+          <strong>Cliente entra em contato</strong>
+          <p>O GO ATendi inicia o atendimento e identifica a intenção.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span>2</span>
+        <div>
+          <strong>Informações são coletadas</strong>
+          <p>Nome, interesse, empresa e necessidade ficam mais organizados.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span>3</span>
+        <div>
+          <strong>Lead segue para o próximo passo</strong>
+          <p>O contato pode ser direcionado para venda, suporte ou agendamento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container final-cta">
+    <span class="eyebrow">Vamos conversar?</span>
+    <h2>Veja qual solução combina com sua operação</h2>
+    <p>
+      Envie seus dados e nossa equipe ajuda a entender onde o GO ATendi pode
+      gerar mais impacto para sua empresa.
+    </p>
+
+    <%= link_to "Inscrever-se", inscricao_path(interest: "solucoes"), class: "btn btn--primary btn--large" %>
+  </div>
+</section>

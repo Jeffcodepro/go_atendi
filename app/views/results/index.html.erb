@@ -1,2 +1,162 @@
-<h1>Results#index</h1>
-<p>Find me in app/views/results/index.html.erb</p>
+<% content_for :page_title, "Resultado" %>
+<% content_for :meta_description, "Entenda os resultados que o GO ATendi pode gerar para empresas: mais agilidade, organização comercial e menos oportunidades perdidas." %>
+
+<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      <span class="eyebrow">Resultado</span>
+
+      <h1>
+        Mais agilidade no atendimento e mais clareza para vender
+      </h1>
+
+      <p>
+        O GO ATendi ajuda sua empresa a responder mais rápido, organizar
+        oportunidades e reduzir perdas causadas por demora, retrabalho ou falta
+        de acompanhamento.
+      </p>
+
+      <%= link_to "Quero melhorar meu atendimento", inscricao_path(interest: "resultados"), class: "btn btn--primary btn--large" %>
+    </div>
+
+    <div class="page-hero__panel page-hero__panel--stats">
+      <div>
+        <strong>+ velocidade</strong>
+        <span>no primeiro contato</span>
+      </div>
+
+      <div>
+        <strong>+ organização</strong>
+        <span>dos leads recebidos</span>
+      </div>
+
+      <div>
+        <strong>+ previsibilidade</strong>
+        <span>no fluxo comercial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Impactos esperados</span>
+      <h2>O que muda na rotina da empresa</h2>
+    </div>
+
+    <div class="cards-grid cards-grid--three">
+      <article class="feature-card">
+        <div class="feature-card__icon">01</div>
+        <h3>Menos demora para responder</h3>
+        <p>
+          A empresa deixa de depender apenas da disponibilidade manual para
+          iniciar conversas importantes.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">02</div>
+        <h3>Menos informação perdida</h3>
+        <p>
+          Dados importantes do cliente são coletados e organizados para dar mais
+          contexto ao atendimento.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">03</div>
+        <h3>Mais padrão no atendimento</h3>
+        <p>
+          A comunicação inicial segue um fluxo definido, reduzindo improviso e
+          inconsistências.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container result-showcase">
+    <div>
+      <span class="eyebrow eyebrow--light">Antes e depois</span>
+      <h2>De mensagens soltas para uma operação acompanhada</h2>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-card comparison-card--before">
+        <h3>Antes</h3>
+
+        <ul>
+          <li>Atendimento manual sem padrão</li>
+          <li>Leads esquecidos em conversas antigas</li>
+          <li>Demora para responder dúvidas simples</li>
+          <li>Pouca clareza sobre o interesse do cliente</li>
+        </ul>
+      </div>
+
+      <div class="comparison-card comparison-card--after">
+        <h3>Com GO ATendi</h3>
+
+        <ul>
+          <li>Fluxos de conversa bem definidos</li>
+          <li>Dados iniciais do lead organizados</li>
+          <li>Atendimento inicial mais rápido</li>
+          <li>Próximo passo mais claro para o time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Para o time</span>
+      <h2>Mais contexto antes da conversa humana</h2>
+      <p>
+        O vendedor ou atendente recebe um contato mais organizado, com dados
+        relevantes e uma noção melhor do que o cliente procura.
+      </p>
+    </div>
+
+    <div class="cards-grid cards-grid--four">
+      <article class="mini-card">
+        <span>1</span>
+        <h3>Entrada</h3>
+        <p>O cliente chama sua empresa por um canal digital.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>2</span>
+        <h3>Triagem</h3>
+        <p>O fluxo identifica intenção e coleta dados importantes.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>3</span>
+        <h3>Organização</h3>
+        <p>As informações ficam mais claras para o próximo atendimento.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>4</span>
+        <h3>Ação</h3>
+        <p>O time comercial segue com mais contexto e prioridade.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container final-cta">
+    <span class="eyebrow">Crescimento com organização</span>
+    <h2>Seu atendimento pode ser mais profissional</h2>
+    <p>
+      O GO ATendi ajuda sua empresa a construir uma base mais sólida para
+      responder, organizar e vender melhor.
+    </p>
+
+    <%= link_to "Inscrever-se", inscricao_path(interest: "resultados"), class: "btn btn--primary btn--large" %>
+  </div>
+</section>

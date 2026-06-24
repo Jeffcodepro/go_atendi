@@ -1,2 +1,142 @@
-<h1>Features#index</h1>
-<p>Find me in app/views/features/index.html.erb</p>
+<% content_for :page_title, "Funcionalidades" %>
+<% content_for :meta_description, "Veja as funcionalidades do GO ATendi para atendimento automatizado, qualificação de leads, organização comercial e acompanhamento de conversas." %>
+
+<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      <span class="eyebrow">Funcionalidades</span>
+
+      <h1>
+        Recursos para automatizar o atendimento sem perder o controle comercial
+      </h1>
+
+      <p>
+        O GO ATendi combina fluxos de conversa, organização de leads e
+        acompanhamento para ajudar sua empresa a responder melhor.
+      </p>
+
+      <%= link_to "Quero testar o GO ATendi", inscricao_path(interest: "funcionalidades"), class: "btn btn--primary btn--large" %>
+    </div>
+
+    <div class="page-hero__panel">
+      <strong>Principais recursos</strong>
+
+      <ul>
+        <li>Fluxos de atendimento</li>
+        <li>Coleta de informações</li>
+        <li>Qualificação de leads</li>
+        <li>Direcionamento para o time</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">O que a plataforma faz</span>
+      <h2>Funcionalidades pensadas para o dia a dia do atendimento</h2>
+    </div>
+
+    <div class="cards-grid cards-grid--three">
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Fluxos de conversa</h3>
+        <p>
+          Estruture caminhos de atendimento para vendas, suporte, agendamento,
+          dúvidas frequentes e qualificação.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Mensagens automáticas</h3>
+        <p>
+          Responda rapidamente os primeiros contatos e mantenha uma comunicação
+          padronizada com o cliente.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Coleta de dados</h3>
+        <p>
+          Capture informações importantes como nome, telefone, empresa, interesse
+          e necessidade principal.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Qualificação de leads</h3>
+        <p>
+          Ajude o time comercial a entender quais contatos têm mais potencial
+          antes de iniciar uma conversa manual.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Direcionamento inteligente</h3>
+        <p>
+          Encaminhe o cliente para o próximo passo com base no interesse
+          informado durante o atendimento.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">✓</div>
+        <h3>Histórico de atendimento</h3>
+        <p>
+          Mantenha mais contexto sobre cada oportunidade para evitar retrabalho
+          e perda de informações.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container feature-highlight">
+    <div>
+      <span class="eyebrow">Experiência do cliente</span>
+      <h2>Atendimento com mais velocidade, padrão e direcionamento</h2>
+      <p>
+        Em vez de deixar o cliente esperando uma resposta manual, o GO ATendi
+        inicia o contato, entende a necessidade e organiza o próximo passo.
+      </p>
+
+      <%= link_to "Ver preços", preco_path, class: "btn btn--secondary" %>
+    </div>
+
+    <div class="feature-highlight__box">
+      <div class="feature-highlight__line">
+        <span>Cliente</span>
+        <strong>“Quero saber mais sobre o produto”</strong>
+      </div>
+
+      <div class="feature-highlight__line">
+        <span>GO ATendi</span>
+        <strong>“Claro. Você procura atendimento, vendas ou suporte?”</strong>
+      </div>
+
+      <div class="feature-highlight__line">
+        <span>Resultado</span>
+        <strong>Lead classificado e pronto para o próximo passo.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container final-cta">
+    <span class="eyebrow">Próximo passo</span>
+    <h2>Veja como essas funcionalidades funcionam na prática</h2>
+    <p>
+      Cadastre seu interesse para receber uma apresentação direcionada ao seu
+      tipo de negócio.
+    </p>
+
+    <%= link_to "Inscrever-se", inscricao_path(interest: "funcionalidades"), class: "btn btn--primary btn--large" %>
+  </div>
+</section>

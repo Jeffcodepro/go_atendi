@@ -1,2 +1,37 @@
-<h1>Access#login</h1>
-<p>Find me in app/views/access/login.html.erb</p>
+<% content_for :page_title, "Entrar" %>
+<% content_for :meta_description, "Área de acesso do GO ATendi para clientes e usuários da plataforma." %>
+
+<section class="login-page">
+  <div class="container login-page__grid">
+    <div class="login-page__content">
+      <span class="eyebrow">Entrar</span>
+
+      <h1>
+        Área de acesso do GO ATendi
+      </h1>
+
+      <p>
+        Esta área será destinada aos clientes e usuários da plataforma. Em breve,
+        o acesso será conectado ao painel real do produto.
+      </p>
+
+      <div class="login-page__actions">
+        <%= link_to "Voltar para a página inicial", root_path, class: "btn btn--secondary btn--large" %>
+        <%= link_to "Quero me inscrever", inscricao_path, class: "btn btn--primary btn--large" %>
+      </div>
+    </div>
+
+    <div class="login-card">
+      <div class="login-card__icon">GO</div>
+
+      <h2>Painel em implantação</h2>
+
+      <p>
+        O login será liberado quando a área interna do produto estiver pronta.
+        Por enquanto, cadastre seu interesse para acompanhar o lançamento.
+      </p>
+
+      <%= link_to "Inscrever-se", inscricao_path, class: "btn btn--primary btn--full" %>
+    </div>
+  </div>
+</section>

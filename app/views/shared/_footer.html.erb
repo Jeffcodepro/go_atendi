@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <%= link_to root_path, class: "site-footer__logo-link", aria: { label: "Ir para a página inicial do GO ATendi" } do %>
+          <span class="site-footer__logo-frame">
+            <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "site-footer__logo-image" %>
+          </span>
+        <% end %>
+
+        <p>
+          Atendimento inteligente para empresas que querem responder mais rápido,
+          organizar oportunidades e transformar conversas em vendas.
+        </p>
+      </div>
+
+      <div class="site-footer__column">
+        <h3>Produto</h3>
+        <%= link_to "Soluções", solucoes_path %>
+        <%= link_to "Funcionalidades", funcionalidades_path %>
+        <%= link_to "Resultado", resultado_path %>
+        <%= link_to "Preço", preco_path %>
+      </div>
+
+      <div class="site-footer__column">
+        <h3>Acesso</h3>
+        <%= link_to "Inscrever-se", inscricao_path %>
+        <%= link_to "Entrar", entrar_path %>
+      </div>
+
+      <div class="site-footer__column">
+        <h3>Contato</h3>
+        <p>Comercial GO ATendi</p>
+        <p>contato@goatendi.com.br</p>
+        <p>www.goatendi.com.br</p>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© <%= Time.current.year %> GO ATendi. Todos os direitos reservados.</p>
+      <p>Produto desenvolvido para atendimento, automação e vendas.</p>
+    </div>
+  </div>
+</footer>

@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>GoAtendi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+      <%= content_for?(:page_title) ? "#{yield(:page_title)} | GO ATendi" : "GO ATendi | Atendimento inteligente para empresas" %>
+    </title>
+
+    <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : 'GO ATendi é uma plataforma de atendimento inteligente para empresas que querem automatizar conversas, organizar leads e vender mais.' %>">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#06a84f">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +16,29 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="go-atendi-body">
+    <%= render "shared/navbar" %>
+
+    <% if notice.present? || alert.present? %>
+      <div class="flash-wrapper">
+        <% if notice.present? %>
+          <div class="flash-message flash-message--notice">
+            <%= notice %>
+          </div>
+        <% end %>
+
+        <% if alert.present? %>
+          <div class="flash-message flash-message--alert">
+            <%= alert %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <main class="page-main">
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
   </body>
 </html>

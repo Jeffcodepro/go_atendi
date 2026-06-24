@@ -1,2 +1,175 @@
-<h1>Pricing#index</h1>
-<p>Find me in app/views/pricing/index.html.erb</p>
+<% content_for :page_title, "Preço" %>
+<% content_for :meta_description, "Conheça os planos do GO ATendi para empresas que querem automatizar atendimento, organizar leads e vender melhor." %>
+
+<% fallback_plans = [
+  {
+    name: "Start",
+    price: "Sob consulta",
+    description: "Para empresas que querem iniciar a organização do atendimento digital.",
+    highlighted: false,
+    features: [
+      "Fluxo inicial de atendimento",
+      "Coleta de dados do lead",
+      "Direcionamento para contato humano",
+      "Suporte de implantação"
+    ]
+  },
+  {
+    name: "Professional",
+    price: "Sob consulta",
+    description: "Para operações que precisam de mais automação e acompanhamento comercial.",
+    highlighted: true,
+    features: [
+      "Fluxos personalizados",
+      "Qualificação de leads",
+      "Múltiplos caminhos de atendimento",
+      "Acompanhamento comercial",
+      "Suporte prioritário"
+    ]
+  },
+  {
+    name: "Business",
+    price: "Sob consulta",
+    description: "Para empresas com operação mais robusta e necessidade de fluxos avançados.",
+    highlighted: false,
+    features: [
+      "Estratégia de atendimento",
+      "Fluxos avançados",
+      "Integrações sob análise",
+      "Treinamento do time",
+      "Acompanhamento de evolução"
+    ]
+  }
+] %>
+
+<section class="page-hero page-hero--center">
+  <div class="container">
+    <span class="eyebrow">Preço</span>
+
+    <h1>
+      Planos para empresas que querem profissionalizar o atendimento
+    </h1>
+
+    <p>
+      Escolha o melhor ponto de partida para sua operação. Os valores podem
+      variar de acordo com volume, integrações e nível de personalização.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="pricing-grid">
+      <% fallback_plans.each do |plan| %>
+        <article class="pricing-card <%= 'pricing-card--highlighted' if plan[:highlighted] %>">
+          <% if plan[:highlighted] %>
+            <span class="pricing-card__badge">Mais recomendado</span>
+          <% end %>
+
+          <div class="pricing-card__header">
+            <h2><%= plan[:name] %></h2>
+            <p><%= plan[:description] %></p>
+          </div>
+
+          <div class="pricing-card__price">
+            <strong><%= plan[:price] %></strong>
+            <span>definido após diagnóstico</span>
+          </div>
+
+          <ul class="pricing-card__features">
+            <% plan[:features].each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          </ul>
+
+          <%= link_to "Tenho interesse", inscricao_path(interest: "preco"), class: "btn #{plan[:highlighted] ? 'btn--primary' : 'btn--secondary'} btn--full" %>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container split-section">
+    <div class="split-section__content">
+      <span class="eyebrow">Como funciona</span>
+      <h2>O preço acompanha a complexidade da sua operação</h2>
+      <p>
+        Antes de definir o melhor plano, entendemos como sua empresa atende hoje,
+        quais canais utiliza, quais fluxos precisa automatizar e qual nível de
+        personalização faz sentido.
+      </p>
+
+      <%= link_to "Solicitar diagnóstico", inscricao_path(interest: "preco"), class: "btn btn--primary" %>
+    </div>
+
+    <div class="process-card">
+      <div class="process-step">
+        <span>1</span>
+        <div>
+          <strong>Você se inscreve</strong>
+          <p>Recebemos seus dados e entendemos o tipo de operação.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span>2</span>
+        <div>
+          <strong>Mapeamos a necessidade</strong>
+          <p>Avaliamos volume, fluxos, canais e objetivo comercial.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <span>3</span>
+        <div>
+          <strong>Apresentamos a proposta</strong>
+          <p>Você recebe uma sugestão de plano e implantação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq-section">
+    <div class="section-heading">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2>Perguntas sobre contratação</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O GO ATendi substitui minha equipe?</summary>
+        <p>
+          Não. A proposta é apoiar o primeiro atendimento, organizar informações
+          e ajudar sua equipe a atuar com mais contexto e velocidade.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>O valor é fixo para todas as empresas?</summary>
+        <p>
+          O preço pode variar conforme complexidade, volume, integrações e nível
+          de personalização do atendimento.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Preciso ter um processo comercial pronto?</summary>
+        <p>
+          Não necessariamente. O diagnóstico inicial ajuda a identificar quais
+          fluxos precisam ser organizados primeiro.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Consigo começar com uma versão simples?</summary>
+        <p>
+          Sim. A ideia é iniciar com um fluxo bem definido e evoluir conforme a
+          operação ganha maturidade.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
