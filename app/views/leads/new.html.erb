@@ -1,2 +1,38 @@
-<h1>Leads#new</h1>
-<p>Find me in app/views/leads/new.html.erb</p>
+<% content_for :page_title, "Inscrever-se" %>
+<% content_for :meta_description, "Inscreva-se para conhecer o GO ATendi e receber uma apresentação comercial do produto." %>
+
+<section class="page-hero">
+  <div class="container page-hero__grid">
+    <div>
+      <span class="eyebrow">Inscrever-se</span>
+
+      <h1>
+        Dê o primeiro passo para organizar seu atendimento
+      </h1>
+
+      <p>
+        Preencha o formulário e nossa equipe entrará em contato para apresentar
+        o GO ATendi e entender como sua empresa atende hoje.
+      </p>
+
+      <div class="signup-benefits">
+        <div>
+          <strong>✓ Diagnóstico inicial</strong>
+          <span>Entendimento da sua operação atual.</span>
+        </div>
+
+        <div>
+          <strong>✓ Demonstração direcionada</strong>
+          <span>Apresentação com foco no seu tipo de negócio.</span>
+        </div>
+
+        <div>
+          <strong>✓ Próximos passos claros</strong>
+          <span>Você entende plano, implantação e possibilidades.</span>
+        </div>
+      </div>
+    </div>
+
+    <%= render "shared/lead_form", lead: @lead, source: "signup_page", button_label: "Enviar inscrição" %>
+  </div>
+</section>

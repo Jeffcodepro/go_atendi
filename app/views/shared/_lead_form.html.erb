@@ -1,0 +1,100 @@
+<% current_lead = local_assigns.fetch(:lead, Lead.new) %>
+<% button_label = local_assigns.fetch(:button_label, "Enviar interesse") %>
+<% source = local_assigns.fetch(:source, "website") %>
+
+<% interest_options = [
+  ["Agendar demonstração", "demo"],
+  ["Conhecer soluções", "solucoes"],
+  ["Ver funcionalidades", "funcionalidades"],
+  ["Falar sobre preço", "preco"],
+  ["Quero contratar", "contratacao"]
+] %>
+
+<div class="lead-form-card">
+  <div class="lead-form-card__header">
+    <span class="eyebrow">Comece agora</span>
+    <h2>Fale com o GO ATendi</h2>
+    <p>
+      Preencha os dados abaixo e nossa equipe entrará em contato para entender
+      sua operação e apresentar o melhor caminho.
+    </p>
+  </div>
+
+  <% if current_lead.errors.any? %>
+    <div class="form-errors">
+      <strong>Confira os campos abaixo:</strong>
+
+      <ul>
+        <% current_lead.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with(model: current_lead, url: inscricao_path, method: :post, local: true, html: { class: "lead-form" }) do |f| %>
+    <%= f.hidden_field :source, value: source %>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <%= f.label :name, "Nome completo" %>
+        <%= f.text_field :name, placeholder: "Seu nome", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "E-mail" %>
+        <%= f.email_field :email, placeholder: "voce@empresa.com", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <%= f.label :phone, "WhatsApp" %>
+        <%= f.telephone_field :phone, placeholder: "(11) 99999-9999", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :company_name, "Empresa" %>
+        <%= f.text_field :company_name, placeholder: "Nome da empresa", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <%= f.label :company_size, "Tamanho da empresa" %>
+        <%= f.select :company_size,
+          options_for_select([
+            ["Selecione", ""],
+            ["1 a 5 pessoas", "1-5"],
+            ["6 a 20 pessoas", "6-20"],
+            ["21 a 50 pessoas", "21-50"],
+            ["Mais de 50 pessoas", "50+"]
+          ], current_lead.company_size),
+          {},
+          class: "form-control"
+        %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :interest, "Interesse" %>
+        <%= f.select :interest,
+          options_for_select(interest_options, current_lead.interest.presence || "demo"),
+          {},
+          class: "form-control"
+        %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :message, "Mensagem" %>
+      <%= f.text_area :message, rows: 5, placeholder: "Conte rapidamente como funciona seu atendimento hoje.", class: "form-control" %>
+    </div>
+
+    <label class="checkbox-field">
+      <%= f.check_box :accepted_terms, {}, "1", "0" %>
+      <span>Autorizo o contato da equipe GO ATendi pelos dados informados.</span>
+    </label>
+
+    <%= f.submit button_label, class: "btn btn--primary btn--full btn--large" %>
+  <% end %>
+</div>

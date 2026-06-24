@@ -1,2 +1,238 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :page_title, "Atendimento inteligente para vender mais" %>
+<% content_for :meta_description, "GO ATendi centraliza conversas, automatiza atendimentos e ajuda empresas a vender mais pelo WhatsApp e canais digitais." %>
+
+<section class="hero-section">
+  <div class="container hero-section__grid">
+    <div class="hero-section__content">
+      <span class="eyebrow">Atendimento com automação e inteligência</span>
+
+      <h1>
+        Transforme conversas em vendas com o
+        <span>GO ATendi</span>
+      </h1>
+
+      <p>
+        Uma plataforma para empresas que querem atender mais rápido, organizar
+        leads, automatizar respostas e acompanhar oportunidades em um único fluxo.
+      </p>
+
+      <div class="hero-section__actions">
+        <%= link_to "Quero me inscrever", inscricao_path, class: "btn btn--primary btn--large" %>
+        <%= link_to "Ver funcionalidades", funcionalidades_path, class: "btn btn--secondary btn--large" %>
+      </div>
+
+      <div class="hero-section__proof">
+        <div>
+          <strong>24h</strong>
+          <span>respostas automáticas</span>
+        </div>
+
+        <div>
+          <strong>+controle</strong>
+          <span>sobre cada lead</span>
+        </div>
+
+        <div>
+          <strong>IA</strong>
+          <span>apoiando o atendimento</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-visual__card hero-visual__card--main">
+        <div class="hero-visual__top">
+          <span class="status-dot"></span>
+          <span>Atendimento ativo</span>
+        </div>
+
+        <h2>Olá! Como podemos ajudar?</h2>
+
+        <div class="chat-flow">
+          <div class="chat-bubble chat-bubble--client">
+            Quero saber mais sobre os planos.
+          </div>
+
+          <div class="chat-bubble chat-bubble--bot">
+            Claro! Vou te mostrar as opções e encaminhar para o consultor ideal.
+          </div>
+
+          <div class="chat-bubble chat-bubble--client">
+            Também quero agendar uma demonstração.
+          </div>
+
+          <div class="chat-bubble chat-bubble--bot">
+            Perfeito. Já registrei seu interesse e separei os horários disponíveis.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual__floating hero-visual__floating--one">
+        <strong>Lead qualificado</strong>
+        <span>Interesse: plano profissional</span>
+      </div>
+
+      <div class="hero-visual__floating hero-visual__floating--two">
+        <strong>Tempo economizado</strong>
+        <span>Atendimento inicial automatizado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Por que o GO ATendi?</span>
+      <h2>Uma operação comercial mais organizada desde o primeiro contato</h2>
+      <p>
+        O GO ATendi foi pensado para empresas que recebem mensagens todos os dias
+        e precisam responder com agilidade sem perder qualidade no atendimento.
+      </p>
+    </div>
+
+    <div class="cards-grid cards-grid--three">
+      <article class="feature-card">
+        <div class="feature-card__icon">01</div>
+        <h3>Atendimento mais rápido</h3>
+        <p>
+          Respostas iniciais automatizadas ajudam sua empresa a não perder
+          oportunidades por demora no primeiro contato.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">02</div>
+        <h3>Leads organizados</h3>
+        <p>
+          Cada conversa pode virar uma oportunidade acompanhada com mais clareza
+          pelo time comercial.
+        </p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-card__icon">03</div>
+        <h3>Fluxos inteligentes</h3>
+        <p>
+          Crie caminhos de atendimento para dúvidas frequentes, qualificação,
+          agendamento e direcionamento.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container split-section">
+    <div class="split-section__content">
+      <span class="eyebrow">Soluções</span>
+      <h2>Feito para quem vende, atende e precisa acompanhar cada oportunidade</h2>
+      <p>
+        Da primeira mensagem até o encaminhamento para um vendedor, o GO ATendi
+        ajuda sua empresa a construir uma experiência mais fluida.
+      </p>
+
+      <%= link_to "Conhecer soluções", solucoes_path, class: "btn btn--secondary" %>
+    </div>
+
+    <div class="solution-list">
+      <div class="solution-list__item">
+        <strong>Captação de leads</strong>
+        <span>Receba contatos e organize informações importantes logo no início da conversa.</span>
+      </div>
+
+      <div class="solution-list__item">
+        <strong>Pré-atendimento</strong>
+        <span>Automatize dúvidas comuns e direcione casos mais importantes ao time.</span>
+      </div>
+
+      <div class="solution-list__item">
+        <strong>Comercial consultivo</strong>
+        <span>Ajude vendedores a entenderem contexto, interesse e estágio do lead.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Funcionalidades</span>
+      <h2>Recursos essenciais para profissionalizar o atendimento</h2>
+    </div>
+
+    <div class="cards-grid cards-grid--four">
+      <article class="mini-card">
+        <span>✓</span>
+        <h3>Fluxos de conversa</h3>
+        <p>Estruture jornadas para dúvidas, vendas, suporte e agendamentos.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>✓</span>
+        <h3>Qualificação</h3>
+        <p>Capture nome, contato, interesse e prioridade antes do atendimento humano.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>✓</span>
+        <h3>Histórico</h3>
+        <p>Organize interações para acompanhar cada oportunidade com mais contexto.</p>
+      </article>
+
+      <article class="mini-card">
+        <span>✓</span>
+        <h3>Encaminhamento</h3>
+        <p>Direcione o lead para o próximo passo com menos atrito operacional.</p>
+      </article>
+    </div>
+
+    <div class="center-action">
+      <%= link_to "Ver todas as funcionalidades", funcionalidades_path, class: "btn btn--primary" %>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container results-band">
+    <div>
+      <span class="eyebrow eyebrow--light">Resultado</span>
+      <h2>Menos mensagens perdidas. Mais oportunidades acompanhadas.</h2>
+    </div>
+
+    <div class="results-band__grid">
+      <div>
+        <strong>+ agilidade</strong>
+        <span>no primeiro contato</span>
+      </div>
+
+      <div>
+        <strong>+ clareza</strong>
+        <span>para o time comercial</span>
+      </div>
+
+      <div>
+        <strong>+ padrão</strong>
+        <span>na experiência do cliente</span>
+      </div>
+    </div>
+
+    <%= link_to "Ver resultados", resultado_path, class: "btn btn--light" %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container final-cta">
+    <span class="eyebrow">Próximo passo</span>
+    <h2>Pronto para organizar seu atendimento?</h2>
+    <p>
+      Inscreva-se para receber uma apresentação do produto e entender como o
+      GO ATendi pode se encaixar na sua operação.
+    </p>
+
+    <div class="final-cta__actions">
+      <%= link_to "Inscrever-se", inscricao_path, class: "btn btn--primary btn--large" %>
+      <%= link_to "Ver preço", preco_path, class: "btn btn--secondary btn--large" %>
+    </div>
+  </div>
+</section>
