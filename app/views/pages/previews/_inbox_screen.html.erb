@@ -1,0 +1,138 @@
+<div
+  class="go-mini-inbox-page"
+  data-controller="inbox-preview"
+  data-action="click@window->inbox-preview#closeMenusOnOutside"
+>
+  <div class="go-mini-inbox-shell">
+    <header class="go-mini-inbox-header">
+      <div class="go-mini-inbox-header__left">
+        <div class="go-mini-inbox-toolbar">
+          <div class="go-mini-inbox-toolbar__left">
+            <h3>Caixa de Entrada</h3>
+
+            <div class="go-mini-inbox-display-wrap">
+              <button
+                type="button"
+                class="go-mini-inbox-display-button"
+                data-inbox-preview-target="displayButton"
+                data-action="click->inbox-preview#toggleDisplayMenu"
+              >
+                <span>Exibir</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+
+              <div class="go-mini-inbox-display-menu" data-inbox-preview-target="displayMenu" hidden>
+                <div class="go-mini-inbox-display-menu__sort">
+                  <div class="go-mini-inbox-display-menu__sort-label">
+                    <i class="fa-solid fa-arrow-up-arrow-down"></i>
+                    <strong>Ordenar</strong>
+                  </div>
+
+                  <div class="go-mini-inbox-order-wrap">
+                    <button
+                      type="button"
+                      class="go-mini-inbox-order-button"
+                      data-inbox-preview-target="orderButton"
+                      data-action="click->inbox-preview#toggleOrderMenu"
+                    >
+                      <span data-inbox-preview-target="orderLabel">Recentes</span>
+                      <i class="fa-solid fa-angle-down"></i>
+                    </button>
+
+                    <div class="go-mini-inbox-order-menu" data-inbox-preview-target="orderMenu" hidden>
+                      <button
+                        type="button"
+                        class="is-active"
+                        data-order-label="Recentes"
+                        data-action="click->inbox-preview#selectOrder"
+                      >
+                        Recentes
+                      </button>
+
+                      <button
+                        type="button"
+                        data-order-label="Mais antigas"
+                        data-action="click->inbox-preview#selectOrder"
+                      >
+                        Mais antigas
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="go-mini-inbox-display-menu__section">
+                  <strong>Exibir:</strong>
+
+                  <button
+                    type="button"
+                    class="go-mini-inbox-check-option"
+                    data-inbox-preview-target="checkOption"
+                    data-action="click->inbox-preview#toggleCheckOption"
+                  >
+                    <span class="go-mini-inbox-checkbox"></span>
+                    <span>Adiadas</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="go-mini-inbox-check-option"
+                    data-inbox-preview-target="checkOption"
+                    data-action="click->inbox-preview#toggleCheckOption"
+                  >
+                    <span class="go-mini-inbox-checkbox"></span>
+                    <span>Lida</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="go-mini-inbox-toolbar__right">
+            <div class="go-mini-inbox-actions-wrap">
+              <button
+                type="button"
+                class="go-mini-inbox-action-button"
+                aria-label="Ações da caixa de entrada"
+                data-inbox-preview-target="actionsButton"
+                data-action="click->inbox-preview#toggleActionsMenu"
+              >
+                <i class="fa-solid fa-sliders"></i>
+              </button>
+
+              <div class="go-mini-inbox-actions-menu" data-inbox-preview-target="actionsMenu" hidden>
+                <button type="button" data-action="click->inbox-preview#markAllAsRead">
+                  Marcar todas como lidas
+                </button>
+
+                <button type="button" data-action="click->inbox-preview#deleteAll">
+                  Excluir todas
+                </button>
+
+                <button type="button" data-action="click->inbox-preview#deleteRead">
+                  Excluir todas as lidas
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="go-mini-inbox-header__right"></div>
+    </header>
+
+    <div class="go-mini-inbox-body">
+      <aside class="go-mini-inbox-list-panel">
+        <p data-inbox-preview-target="listMessage">Nenhuma notificação</p>
+      </aside>
+
+      <section class="go-mini-inbox-empty-panel">
+        <div class="go-mini-inbox-empty-content">
+          <i class="fa-solid fa-inbox"></i>
+          <strong data-inbox-preview-target="emptyMessage">
+            Notificações de todas as caixas inscritas
+          </strong>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

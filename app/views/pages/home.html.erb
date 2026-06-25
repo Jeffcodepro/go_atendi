@@ -1,9 +1,13 @@
 <% content_for :page_title, "Atendimento inteligente para vender mais" %>
 <% content_for :meta_description, "GO ATendi centraliza conversas, automatiza atendimentos e ajuda empresas a vender mais pelo WhatsApp e canais digitais." %>
 
-<section class="hero-section">
-  <div class="container hero-section__grid">
-    <div class="hero-section__content">
+<section class="hero-section hero-section--with-preview">
+  <div class="container">
+    <div class="hero-section__preview">
+      <%= render "pages/product_preview" %>
+    </div>
+
+    <div class="hero-section__content hero-section__content--center">
       <span class="eyebrow">Atendimento com automação e inteligência</span>
 
       <h1>
@@ -36,45 +40,6 @@
           <strong>IA</strong>
           <span>apoiando o atendimento</span>
         </div>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-visual__card hero-visual__card--main">
-        <div class="hero-visual__top">
-          <span class="status-dot"></span>
-          <span>Atendimento ativo</span>
-        </div>
-
-        <h2>Olá! Como podemos ajudar?</h2>
-
-        <div class="chat-flow">
-          <div class="chat-bubble chat-bubble--client">
-            Quero saber mais sobre os planos.
-          </div>
-
-          <div class="chat-bubble chat-bubble--bot">
-            Claro! Vou te mostrar as opções e encaminhar para o consultor ideal.
-          </div>
-
-          <div class="chat-bubble chat-bubble--client">
-            Também quero agendar uma demonstração.
-          </div>
-
-          <div class="chat-bubble chat-bubble--bot">
-            Perfeito. Já registrei seu interesse e separei os horários disponíveis.
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual__floating hero-visual__floating--one">
-        <strong>Lead qualificado</strong>
-        <span>Interesse: plano profissional</span>
-      </div>
-
-      <div class="hero-visual__floating hero-visual__floating--two">
-        <strong>Tempo economizado</strong>
-        <span>Atendimento inicial automatizado</span>
       </div>
     </div>
   </div>
@@ -126,7 +91,9 @@
   <div class="container split-section">
     <div class="split-section__content">
       <span class="eyebrow">Soluções</span>
+
       <h2>Feito para quem vende, atende e precisa acompanhar cada oportunidade</h2>
+
       <p>
         Da primeira mensagem até o encaminhamento para um vendedor, o GO ATendi
         ajuda sua empresa a construir uma experiência mais fluida.
@@ -138,17 +105,23 @@
     <div class="solution-list">
       <div class="solution-list__item">
         <strong>Captação de leads</strong>
-        <span>Receba contatos e organize informações importantes logo no início da conversa.</span>
+        <span>
+          Receba contatos e organize informações importantes logo no início da conversa.
+        </span>
       </div>
 
       <div class="solution-list__item">
         <strong>Pré-atendimento</strong>
-        <span>Automatize dúvidas comuns e direcione casos mais importantes ao time.</span>
+        <span>
+          Automatize dúvidas comuns e direcione casos mais importantes ao time.
+        </span>
       </div>
 
       <div class="solution-list__item">
         <strong>Comercial consultivo</strong>
-        <span>Ajude vendedores a entenderem contexto, interesse e estágio do lead.</span>
+        <span>
+          Ajude vendedores a entenderem contexto, interesse e estágio do lead.
+        </span>
       </div>
     </div>
   </div>
@@ -224,7 +197,9 @@
 <section class="section">
   <div class="container final-cta">
     <span class="eyebrow">Próximo passo</span>
+
     <h2>Pronto para organizar seu atendimento?</h2>
+
     <p>
       Inscreva-se para receber uma apresentação do produto e entender como o
       GO ATendi pode se encaixar na sua operação.
