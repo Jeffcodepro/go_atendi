@@ -1,0 +1,345 @@
+.go-mini-inbox-page {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  color: #1f2937;
+  position: relative;
+  overflow: hidden;
+}
+
+.go-mini-inbox-shell {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 58px minmax(0, 1fr);
+  background: #ffffff;
+}
+
+.go-mini-inbox-header {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  min-height: 58px;
+  background: #ffffff;
+}
+
+.go-mini-inbox-header__left {
+  border-right: 1px solid #edf0f4;
+  background: #ffffff;
+}
+
+.go-mini-inbox-header__right {
+  background: #ffffff;
+}
+
+.go-mini-inbox-toolbar {
+  width: 100%;
+  height: 100%;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.go-mini-inbox-toolbar__left {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.go-mini-inbox-toolbar__right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.go-mini-inbox-toolbar h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.go-mini-inbox-display-wrap,
+.go-mini-inbox-actions-wrap,
+.go-mini-inbox-order-wrap {
+  position: relative;
+}
+
+.go-mini-inbox-display-button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.go-mini-inbox-display-button:hover,
+.go-mini-inbox-display-button.is-active {
+  background: #f3f4f6;
+}
+
+.go-mini-inbox-action-button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #1f2937;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.go-mini-inbox-action-button:hover,
+.go-mini-inbox-action-button.is-active {
+  background: #f3f4f6;
+}
+
+.go-mini-inbox-display-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 40;
+  width: 300px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.12),
+    0 4px 12px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.go-mini-inbox-display-menu__sort {
+  min-height: 68px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #edf0f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.go-mini-inbox-display-menu__sort-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1f2937;
+}
+
+.go-mini-inbox-display-menu__sort-label i {
+  font-size: 0.92rem;
+}
+
+.go-mini-inbox-display-menu__sort-label strong {
+  font-size: 0.93rem;
+  font-weight: 700;
+}
+
+.go-mini-inbox-order-button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #dfe3ea;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #6b7280;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.84rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.go-mini-inbox-order-button:hover,
+.go-mini-inbox-order-button.is-active {
+  background: #f8fafc;
+  color: #111827;
+}
+
+.go-mini-inbox-order-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 50;
+  width: 150px;
+  padding: 7px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(17, 24, 39, 0.12);
+}
+
+.go-mini-inbox-order-menu button {
+  width: 100%;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #5f6b7a;
+  font-size: 0.76rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.go-mini-inbox-order-menu button:hover,
+.go-mini-inbox-order-menu button.is-active {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.go-mini-inbox-display-menu__section {
+  padding: 14px 18px 16px;
+}
+
+.go-mini-inbox-display-menu__section > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #6b7280;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.go-mini-inbox-check-option {
+  width: 100%;
+  min-height: 46px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.go-mini-inbox-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 7px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(17, 24, 39, 0.08);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.go-mini-inbox-check-option.is-checked .go-mini-inbox-checkbox {
+  border-color: #111827;
+  background: #111827;
+}
+
+.go-mini-inbox-check-option.is-checked .go-mini-inbox-checkbox::after {
+  content: "";
+  width: 8px;
+  height: 12px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  transform: rotate(45deg);
+}
+
+.go-mini-inbox-actions-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 45;
+  width: 250px;
+  padding: 14px 0;
+  border: 1px solid #eceff3;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 22px 60px rgba(17, 24, 39, 0.13),
+    0 6px 16px rgba(17, 24, 39, 0.06);
+  overflow: hidden;
+}
+
+.go-mini-inbox-actions-menu button {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  background: transparent;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.go-mini-inbox-actions-menu button:hover {
+  background: #f5f6f8;
+}
+
+.go-mini-inbox-body {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  background: #ffffff;
+}
+
+.go-mini-inbox-list-panel {
+  border-right: 1px solid #edf0f4;
+  background: #ffffff;
+  padding-top: 28px;
+  text-align: center;
+}
+
+.go-mini-inbox-list-panel p {
+  margin: 0;
+  color: #8b93a1;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.go-mini-inbox-empty-panel {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.go-mini-inbox-empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  color: #6b7280;
+  text-align: center;
+  padding: 24px;
+}
+
+.go-mini-inbox-empty-content i {
+  font-size: 1.8rem;
+  color: #6b7280;
+}
+
+.go-mini-inbox-empty-content strong {
+  color: #4b5563;
+  font-size: 0.86rem;
+  font-weight: 500;
+  max-width: 260px;
+}

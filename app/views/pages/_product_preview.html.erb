@@ -1,0 +1,413 @@
+<div class="go-product-preview" data-controller="product-preview">
+  <div class="go-product-preview__scaler">
+    <div class="go-mini-app">
+      <aside class="go-mini-sidebar">
+        <div class="go-mini-sidebar__top">
+          <div class="go-mini-workspace">
+            <div class="go-mini-workspace__logo">G</div>
+            <strong>Cliente X</strong>
+          </div>
+
+          <button type="button" class="go-mini-icon-button" aria-label="Editar workspace">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </div>
+
+        <div class="go-mini-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Pesquisar...</span>
+        </div>
+
+        <div class="go-mini-sidebar__scroll">
+          <nav class="go-mini-menu">
+            <button
+              type="button"
+              class="go-mini-menu__item is-active"
+              data-product-preview-target="menuItem"
+              data-preview-module="inbox"
+              data-action="click->product-preview#switchModule"
+            >
+              <i class="fa-solid fa-inbox"></i>
+              <span>Caixa de Entrada</span>
+            </button>
+
+            <button
+              type="button"
+              class="go-mini-menu__item"
+              data-product-preview-target="menuItem"
+              data-preview-module="conversations"
+              data-action="click->product-preview#switchModule"
+            >
+              <i class="fa-regular fa-comment"></i>
+              <span>Conversas</span>
+              <i class="fa-solid fa-angle-down go-mini-menu__caret"></i>
+            </button>
+
+            <div class="go-mini-submenu" data-product-preview-target="submenu" data-parent-module="conversations" hidden>
+              <button type="button" class="go-mini-submenu__item is-current" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Todas as conversas</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Menções</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Participantes</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Não atendidas</button>
+
+              <div class="go-mini-submenu__group">
+                <span class="go-mini-submenu__title">
+                  <i class="fa-solid fa-users"></i>
+                  Times
+                </span>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Suporte</button>
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">Vendas</button>
+              </div>
+
+              <div class="go-mini-submenu__group">
+                <span class="go-mini-submenu__title">
+                  <i class="fa-solid fa-tower-broadcast"></i>
+                  Canais
+                </span>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <i class="fa-brands fa-instagram"></i>
+                  Instagram
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <i class="fa-brands fa-facebook-messenger"></i>
+                  Messenger
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <i class="fa-brands fa-facebook"></i>
+                  Facebook
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  WhatsApp Oficial
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <i class="fa-solid fa-globe"></i>
+                  Site
+                </button>
+              </div>
+
+              <div class="go-mini-submenu__group">
+                <span class="go-mini-submenu__title">
+                  <i class="fa-solid fa-tag"></i>
+                  Etiquetas
+                </span>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--muted"></span>
+                  lead-desqualificado
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--blue"></span>
+                  lead-frio
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="conversations" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--pink"></span>
+                  lead-quente
+                </button>
+              </div>
+            </div>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="captain" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-compass"></i>
+              <span>Capitão</span>
+              <i class="fa-solid fa-angle-down go-mini-menu__caret"></i>
+            </button>
+
+            <div class="go-mini-submenu" data-product-preview-target="submenu" data-parent-module="captain" hidden>
+              <button type="button" class="go-mini-submenu__item is-current" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">FAQs</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">Documentos</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">Playground</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">Caixas de Entrada</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">Ferramentas</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="captain" data-action="click->product-preview#switchSubmenu">Configurações</button>
+            </div>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="contacts" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-address-book"></i>
+              <span>Contatos</span>
+              <i class="fa-solid fa-angle-down go-mini-menu__caret"></i>
+            </button>
+
+            <div class="go-mini-submenu" data-product-preview-target="submenu" data-parent-module="contacts" hidden>
+              <button type="button" class="go-mini-submenu__item is-current" data-product-preview-target="submenuItem" data-submenu-parent="contacts" data-action="click->product-preview#switchSubmenu">Todos os Contatos</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="contacts" data-action="click->product-preview#switchSubmenu">Ativo</button>
+
+              <div class="go-mini-submenu__group">
+                <span class="go-mini-submenu__title">
+                  <i class="fa-solid fa-tag"></i>
+                  Marcado com
+                </span>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="contacts" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--muted"></span>
+                  lead-desqualificado
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="contacts" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--blue"></span>
+                  lead-frio
+                </button>
+
+                <button type="button" class="go-mini-submenu__item go-mini-submenu__item--nested" data-product-preview-target="submenuItem" data-submenu-parent="contacts" data-action="click->product-preview#switchSubmenu">
+                  <span class="go-mini-label-dot go-mini-label-dot--pink"></span>
+                  lead-quente
+                </button>
+              </div>
+            </div>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="crm" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-list-check"></i>
+              <span>CRM</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="kanban" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-table-columns"></i>
+              <span>Kanban</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="connections" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-message"></i>
+              <span>Conexões</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="internal_chats" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-comment"></i>
+              <span>Chats Internos</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="projects" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-folder-open"></i>
+              <span>Projetos</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="appointments" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-calendar"></i>
+              <span>Atendimentos</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="broadcast" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-bullhorn"></i>
+              <span>Disparador</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="email_marketing" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-envelope"></i>
+              <span>Email Marketing</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="chatbot_flows" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-sitemap"></i>
+              <span>Chatbot Flows</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="extra_config" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-sliders"></i>
+              <span>Config Extra</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="reports" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Relatórios</span>
+              <i class="fa-solid fa-angle-down go-mini-menu__caret"></i>
+            </button>
+
+            <div class="go-mini-submenu" data-product-preview-target="submenu" data-parent-module="reports" hidden>
+              <button type="button" class="go-mini-submenu__item is-current" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Visão geral</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Conversas</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Agentes</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Etiquetas</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Caixa de Entrada</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Time</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">CSAT</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">SLA</button>
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="reports" data-action="click->product-preview#switchSubmenu">Bots</button>
+            </div>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="campaigns" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>Campanhas</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="help_center" data-action="click->product-preview#switchModule">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>Central de Ajuda</span>
+            </button>
+
+            <button type="button" class="go-mini-menu__item" data-product-preview-target="menuItem" data-preview-module="settings" data-action="click->product-preview#switchModule">
+              <i class="fa-solid fa-gear"></i>
+              <span>Configurações</span>
+              <i class="fa-solid fa-angle-down go-mini-menu__caret"></i>
+            </button>
+
+            <div class="go-mini-submenu" data-product-preview-target="submenu" data-parent-module="settings" hidden>
+              <button type="button" class="go-mini-submenu__item is-current" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-regular fa-user"></i>
+                Conta
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-headset"></i>
+                Agentes
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-users"></i>
+                Times
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-inbox"></i>
+                Caixas de Entrada
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-tag"></i>
+                Etiquetas
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-code"></i>
+                Atributos Personalizados
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Automação
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-robot"></i>
+                Bots
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-bolt"></i>
+                Macros
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-regular fa-message"></i>
+                Respostas Prontas
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-plug"></i>
+                Integrações
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-shield-halved"></i>
+                Auditoria
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-clock"></i>
+                SLA
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-diagram-project"></i>
+                Fluxo de Conversa
+              </button>
+
+              <button type="button" class="go-mini-submenu__item" data-product-preview-target="submenuItem" data-submenu-parent="settings" data-action="click->product-preview#switchSubmenu">
+                <i class="fa-solid fa-lock"></i>
+                Segurança
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <div class="go-mini-user">
+          <div class="go-mini-user__avatar">S</div>
+
+          <div>
+            <strong>Dev</strong>
+            <span>dev@sollucion.com</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="go-mini-main">
+        <section class="go-mini-screen is-active" data-product-preview-target="screen" data-preview-screen="inbox">
+          <%= render "pages/previews/inbox_screen" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="conversations" hidden>
+          <%= render "pages/previews/preview_screen", title: "Conversas", description: "Visualize conversas abertas, filas, canais e etiquetas.", icon: "fa-regular fa-comment" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="captain" hidden>
+          <%= render "pages/previews/preview_screen", title: "Capitão", description: "Base de conhecimento, FAQs, documentos e apoio inteligente.", icon: "fa-solid fa-compass" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="contacts" hidden>
+          <%= render "pages/previews/preview_screen", title: "Contatos", description: "Organize contatos, leads, clientes e etiquetas.", icon: "fa-regular fa-address-book" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="crm" hidden>
+          <%= render "pages/previews/preview_screen", title: "CRM", description: "Unifique pessoas, canais, histórico e oportunidades.", icon: "fa-solid fa-list-check" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="kanban" hidden>
+          <%= render "pages/previews/preview_screen", title: "Kanban", description: "Acompanhe oportunidades por etapa do funil.", icon: "fa-solid fa-table-columns" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="connections" hidden>
+          <%= render "pages/previews/preview_screen", title: "Conexões", description: "Gerencie canais oficiais e integrações.", icon: "fa-regular fa-message" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="internal_chats" hidden>
+          <%= render "pages/previews/preview_screen", title: "Chats Internos", description: "Converse com sua equipe dentro da plataforma.", icon: "fa-regular fa-comment" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="projects" hidden>
+          <%= render "pages/previews/preview_screen", title: "Projetos", description: "Organize entregas, responsáveis e prazos.", icon: "fa-regular fa-folder-open" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="appointments" hidden>
+          <%= render "pages/previews/preview_screen", title: "Atendimentos", description: "Agenda, clientes, profissionais, serviços e relatórios.", icon: "fa-regular fa-calendar" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="broadcast" hidden>
+          <%= render "pages/previews/preview_screen", title: "Disparador", description: "Crie campanhas e envios segmentados.", icon: "fa-solid fa-bullhorn" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="email_marketing" hidden>
+          <%= render "pages/previews/preview_screen", title: "Email Marketing", description: "Gerencie ações de relacionamento por e-mail.", icon: "fa-regular fa-envelope" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="chatbot_flows" hidden>
+          <%= render "pages/previews/preview_screen", title: "Chatbot Flows", description: "Construa fluxos automatizados para atendimento e vendas.", icon: "fa-solid fa-sitemap" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="extra_config" hidden>
+          <%= render "pages/previews/preview_screen", title: "Config Extra", description: "Ajustes avançados da operação.", icon: "fa-solid fa-sliders" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="reports" hidden>
+          <%= render "pages/previews/preview_screen", title: "Relatórios", description: "Indicadores de conversas, agentes, equipes e atendimento.", icon: "fa-solid fa-chart-line" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="campaigns" hidden>
+          <%= render "pages/previews/preview_screen", title: "Campanhas", description: "Acompanhe campanhas e ações comerciais.", icon: "fa-solid fa-bullseye" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="help_center" hidden>
+          <%= render "pages/previews/preview_screen", title: "Central de Ajuda", description: "Conteúdos de suporte para usuários e equipes.", icon: "fa-regular fa-circle-question" %>
+        </section>
+
+        <section class="go-mini-screen" data-product-preview-target="screen" data-preview-screen="settings" hidden>
+          <%= render "pages/previews/preview_screen", title: "Configurações", description: "Conta, agentes, times, caixas, automações, integrações e segurança.", icon: "fa-solid fa-gear" %>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
