@@ -1,0 +1,201 @@
+.go-mini-conversations-page.is-notifications-expanded {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded.has-conversation,
+.go-mini-conversations-page.is-notifications-expanded.has-conversation.is-details-closed {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  border-right: 0 !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-empty,
+.go-mini-conversations-page.is-notifications-expanded .go-mini-chat-panel,
+.go-mini-conversations-page.is-notifications-expanded .go-mini-contact-panel {
+  display: none !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__header {
+  width: 100% !important;
+  border-bottom: 1px solid #edf0f4 !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-title-row {
+  width: 100% !important;
+  padding-inline: 18px !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-tabs {
+  width: 100% !important;
+  padding-inline: 18px !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  background: #ffffff !important;
+  overflow-y: auto !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list-empty {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 28px 18px !important;
+  text-align: center !important;
+  color: #1f2937 !important;
+  font-size: 0.96rem !important;
+  font-weight: 500 !important;
+}
+
+/* Linha horizontal expandida */
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body > .go-mini-conversation-card {
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 64px !important;
+  padding: 0 22px !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid #edf0f4 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  display: grid !important;
+  grid-template-columns: 22px 34px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 15px !important;
+  text-align: left !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body > .go-mini-conversation-card:hover,
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body > .go-mini-conversation-card.is-active {
+  background: #f8fafc !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body > .go-mini-conversation-card::before {
+  content: "" !important;
+  width: 17px !important;
+  height: 17px !important;
+  border: 1px solid #d6dce5 !important;
+  border-radius: 5px !important;
+  background: #ffffff !important;
+  display: block !important;
+}
+
+/* Avatar menor no modo expandido */
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__avatar {
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  border-radius: 8px !important;
+  font-size: 0.68rem !important;
+  align-self: center !important;
+}
+
+/* Conteúdo vira linha */
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__content {
+  min-width: 0 !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 160px 140px minmax(0, 1fr) 82px !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+/* Meta vira colunas internas */
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__meta {
+  display: contents !important;
+  margin: 0 !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__meta span {
+  grid-column: 1 !important;
+  min-width: 0 !important;
+  color: #5f6b7a !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__meta small {
+  grid-column: 4 !important;
+  justify-self: end !important;
+  color: #5f6b7a !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card strong {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+  display: block !important;
+  color: #1f2937 !important;
+  font-size: 0.86rem !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card p {
+  grid-column: 3 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  color: #5f6b7a !important;
+  font-size: 0.86rem !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__tags {
+  display: none !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-loaded {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 22px 14px !important;
+  border-right: 0 !important;
+  color: #6b7280 !important;
+  font-size: 0.92rem !important;
+  text-align: center !important;
+}
+
+.go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-actions button[aria-label="Voltar para visualização normal"] {
+  background: #f3f4f6 !important;
+  color: #1f2937 !important;
+}
+
+@media (max-width: 900px) {
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversations-list__body > .go-mini-conversation-card {
+    grid-template-columns: 22px 32px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding-inline: 14px !important;
+  }
+
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__content {
+    grid-template-columns: 120px 105px minmax(0, 1fr) 58px !important;
+    gap: 12px !important;
+  }
+
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__meta span,
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card strong,
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card p,
+  .go-mini-conversations-page.is-notifications-expanded .go-mini-conversation-card__meta small {
+    font-size: 0.76rem !important;
+  }
+}
