@@ -35,18 +35,23 @@ export default class extends Controller {
 
     if (sameModule && submenuIsVisible && !submenuIsCollapsed) {
       this.collapseSubmenuKeepingCurrent(moduleName)
+      this.dispatchConversationFilterIfNeeded(moduleName)
       this.syncCaretState()
       return
     }
 
     if (sameModule && submenuIsVisible && submenuIsCollapsed) {
       this.openOnlySubmenu(moduleName)
+      this.ensureSubmenuHasCurrentItem(moduleName)
+      this.dispatchConversationFilterIfNeeded(moduleName)
       this.syncCaretState()
       return
     }
 
     this.clearSubmenuSelectionsExcept(moduleName)
     this.openOnlySubmenu(moduleName)
+    this.ensureSubmenuHasCurrentItem(moduleName)
+    this.dispatchConversationFilterIfNeeded(moduleName)
     this.syncCaretState()
   }
 
@@ -58,10 +63,12 @@ export default class extends Controller {
 
     this.activeModule = moduleName
 
+    this.clearSubmenuSelectionsExcept(moduleName)
     this.activateMenuItem(moduleName)
     this.activateScreen(moduleName)
     this.openOnlySubmenu(moduleName)
     this.activateSubmenuItem(submenuItem)
+    this.dispatchConversationSelection(submenuItem)
     this.syncCaretState()
   }
 
@@ -75,6 +82,8 @@ export default class extends Controller {
 
     if (hasSubmenu) {
       this.openOnlySubmenu(moduleName)
+      this.ensureSubmenuHasCurrentItem(moduleName)
+      this.dispatchConversationFilterIfNeeded(moduleName)
     } else {
       this.closeAllSubmenus()
       this.clearAllSubmenuSelections()
@@ -108,6 +117,21 @@ export default class extends Controller {
 
       item.classList.toggle("is-current", active)
     })
+  }
+
+  ensureSubmenuHasCurrentItem(moduleName) {
+    const currentItem = this.getCurrentSubmenuItem(moduleName)
+
+    if (currentItem) return currentItem
+
+    const firstItem = this.getFirstSubmenuItem(moduleName)
+
+    if (firstItem) {
+      firstItem.classList.add("is-current")
+      return firstItem
+    }
+
+    return null
   }
 
   openOnlySubmenu(moduleName) {
@@ -247,5 +271,29 @@ export default class extends Controller {
 
       caret.classList.toggle("is-open", this.isSubmenuExpanded(moduleName))
     })
+  }
+
+  dispatchConversationFilterIfNeeded(moduleName) {
+    if (moduleName !== "conversations") return
+
+    const selectedItem = this.ensureSubmenuHasCurrentItem("conversations")
+
+    if (!selectedItem) return
+
+    this.dispatchConversationSelection(selectedItem)
+  }
+
+  dispatchConversationSelection(submenuItem) {
+    const moduleName = submenuItem.dataset.submenuParent
+
+    if (moduleName !== "conversations") return
+
+    const label = submenuItem.textContent.replace(/\s+/g, " ").trim()
+
+    window.dispatchEvent(
+      new CustomEvent("go-atendi:conversation-filter", {
+        detail: { label }
+      })
+    )
   }
 }

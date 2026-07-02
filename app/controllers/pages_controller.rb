@@ -8,4 +8,19 @@ class PagesController < ApplicationController
     @faqs = Faq.active.ordered.limit(5)
     @lead = Lead.new(interest: "demo")
   end
+
+  def privacidade
+  end
+
+  def termos
+  end
+
+  def cookies_policy
+  end
+
+  def lgpd
+  end
+
+  def data_deletion
+  end
 end

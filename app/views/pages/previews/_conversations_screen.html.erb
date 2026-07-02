@@ -1,0 +1,774 @@
+<div
+  class="go-mini-conversations-page"
+  data-controller="conversations-preview"
+  data-action="
+    go-atendi:conversation-filter@window->conversations-preview#applySidebarFilter
+    click@window->conversations-preview#closeFloatingOnOutside
+  "
+  data-conversations-preview-target="page"
+>
+  <aside class="go-mini-conversations-list">
+    <header class="go-mini-conversations-list__header">
+      <div class="go-mini-conversations-title-row">
+        <div class="go-mini-conversations-title">
+          <h3 data-conversations-preview-target="screenTitle">Conversas</h3>
+          <span>Abertas</span>
+
+          <button
+            type="button"
+            aria-label="Iniciar conversa rápida"
+            data-action="click->conversations-preview#openQuickConversation"
+          >
+            <i class="fa-regular fa-square-plus"></i>
+          </button>
+        </div>
+
+        <div class="go-mini-conversations-actions">
+          <button
+            type="button"
+            class="go-mini-conversations-filter-button"
+            aria-label="Filtrar conversas"
+            data-action="click->conversations-preview#toggleFilterPanel"
+          >
+            <i class="fa-solid fa-filter"></i>
+          </button>
+
+          <div class="go-mini-conversations-sort-wrap">
+            <button
+              type="button"
+              class="go-mini-conversations-sort-button"
+              aria-label="Ordenar conversas"
+              data-action="click->conversations-preview#toggleSortPanel"
+            >
+              <i class="fa-solid fa-arrow-up-arrow-down"></i>
+            </button>
+
+            <div
+              class="go-mini-conversation-sort-panel"
+              data-conversations-preview-target="sortPanel"
+              hidden
+            >
+              <div class="go-mini-conversation-sort-row">
+                <span>Status</span>
+
+                <div class="go-mini-conversation-sort-select">
+                  <button
+                    type="button"
+                    data-sort-menu-button="status"
+                    data-action="click->conversations-preview#toggleSortMenu"
+                  >
+                    <span data-sort-label="status">Abertas</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </button>
+
+                  <div data-sort-menu="status" hidden>
+                    <button type="button" data-sort-type="status" data-sort-label-value="Abertas" data-action="click->conversations-preview#selectSortOption">Abertas</button>
+                    <button type="button" data-sort-type="status" data-sort-label-value="Resolvidas" data-action="click->conversations-preview#selectSortOption">Resolvidas</button>
+                    <button type="button" data-sort-type="status" data-sort-label-value="Pendentes" data-action="click->conversations-preview#selectSortOption">Pendentes</button>
+                    <button type="button" data-sort-type="status" data-sort-label-value="Adiadas" data-action="click->conversations-preview#selectSortOption">Adiadas</button>
+                    <button type="button" data-sort-type="status" data-sort-label-value="Todas" data-action="click->conversations-preview#selectSortOption">Todas</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="go-mini-conversation-sort-row">
+                <span>Ordenar por</span>
+
+                <div class="go-mini-conversation-sort-select">
+                  <button
+                    type="button"
+                    data-sort-menu-button="order"
+                    data-action="click->conversations-preview#toggleSortMenu"
+                  >
+                    <span data-sort-label="order">Última atividade</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                  </button>
+
+                  <div data-sort-menu="order" hidden>
+                    <button type="button" data-sort-type="order" data-sort-label-value="Última atividade" data-action="click->conversations-preview#selectSortOption">Última atividade</button>
+                    <button type="button" data-sort-type="order" data-sort-label-value="Criado em" data-action="click->conversations-preview#selectSortOption">Criado em</button>
+                    <button type="button" data-sort-type="order" data-sort-label-value="Prioridade" data-action="click->conversations-preview#selectSortOption">Prioridade</button>
+                    <button type="button" data-sort-type="order" data-sort-label-value="Nome do contato" data-action="click->conversations-preview#selectSortOption">Nome do contato</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" aria-label="Ir para próxima conversa">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav class="go-mini-conversations-tabs" aria-label="Filtros de conversas">
+        <button
+          type="button"
+          class="is-active"
+          data-conversations-preview-target="tab"
+          data-conversations-tab="mine"
+          data-action="click->conversations-preview#switchTab"
+        >
+          Minhas
+          <span>0</span>
+        </button>
+
+        <button
+          type="button"
+          data-conversations-preview-target="tab"
+          data-conversations-tab="unassigned"
+          data-action="click->conversations-preview#switchTab"
+        >
+          Não atribuídas
+          <span>2</span>
+        </button>
+
+        <button
+          type="button"
+          data-conversations-preview-target="tab"
+          data-conversations-tab="all"
+          data-action="click->conversations-preview#switchTab"
+        >
+          Todos
+          <span>2</span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="go-mini-conversations-list__body">
+      <div
+        class="go-mini-conversations-list-empty"
+        data-conversations-preview-target="listEmpty"
+      >
+        Não há conversas ativas neste grupo.
+      </div>
+
+      <button
+        type="button"
+        class="go-mini-conversation-card"
+        data-conversations-preview-target="conversationCard"
+        data-conversation-groups="unassigned all"
+        data-conversation-filters="all unanswered team-sales channel-whatsapp tag-hot"
+        data-conversation-key="ana"
+        data-contact-name="Ana Martins"
+        data-contact-initials="AM"
+        data-contact-id="#248"
+        data-contact-channel="WhatsApp Oficial"
+        data-contact-email="ana.martins@email.com"
+        data-contact-phone="+55 11 94820-1090"
+        data-contact-handle="5511948201090@s.whatsapp.net"
+        data-contact-status="Disponível"
+        data-action="click->conversations-preview#openConversation"
+        hidden
+      >
+        <div class="go-mini-conversation-card__avatar go-mini-conversation-card__avatar--green">
+          AM
+        </div>
+
+        <div class="go-mini-conversation-card__content">
+          <div class="go-mini-conversation-card__meta">
+            <span>
+              <i class="fa-brands fa-whatsapp"></i>
+              WhatsApp Oficial
+            </span>
+
+            <small>1h</small>
+          </div>
+
+          <strong>Ana Martins</strong>
+
+          <p>Olá, gostaria de entender os planos e integrações.</p>
+
+          <div class="go-mini-conversation-card__tags">
+            <span>lead-quente</span>
+            <span>vendas</span>
+          </div>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        class="go-mini-conversation-card"
+        data-conversations-preview-target="conversationCard"
+        data-conversation-groups="unassigned all"
+        data-conversation-filters="all unanswered team-support channel-instagram tag-cold"
+        data-conversation-key="ricardo"
+        data-contact-name="Ricardo Costa"
+        data-contact-initials="RC"
+        data-contact-id="#249"
+        data-contact-channel="Instagram Direct"
+        data-contact-email="ricardo.costa@email.com"
+        data-contact-phone="+55 11 96741-2230"
+        data-contact-handle="@ricardo.costa"
+        data-contact-status="Em qualificação"
+        data-action="click->conversations-preview#openConversation"
+        hidden
+      >
+        <div class="go-mini-conversation-card__avatar go-mini-conversation-card__avatar--blue">
+          RC
+        </div>
+
+        <div class="go-mini-conversation-card__content">
+          <div class="go-mini-conversation-card__meta">
+            <span>
+              <i class="fa-brands fa-instagram"></i>
+              Instagram
+            </span>
+
+            <small>3h</small>
+          </div>
+
+          <strong>Ricardo Costa</strong>
+
+          <p>Preciso automatizar o primeiro atendimento da clínica.</p>
+
+          <div class="go-mini-conversation-card__tags">
+            <span>suporte</span>
+            <span>lead-frio</span>
+          </div>
+        </div>
+      </button>
+
+      <div
+        class="go-mini-conversations-loaded"
+        data-conversations-preview-target="loadedMessage"
+        hidden
+      >
+        Todas as conversas carregadas 🎉
+      </div>
+    </div>
+  </aside>
+
+  <section
+    class="go-mini-conversations-empty"
+    data-conversations-preview-target="emptyPanel"
+  >
+    <div class="go-mini-conversations-empty__illustration">
+      <i class="fa-regular fa-comments"></i>
+    </div>
+
+    <h4 data-conversations-preview-target="emptyTitle">
+      Oh oh! parece que não há mensagens de clientes na sua caixa de entrada.
+    </h4>
+
+    <div class="go-mini-conversations-shortcuts">
+      <div>
+        <span>⌘</span>
+        <span>K</span>
+        <p>para abrir o menu de comando</p>
+      </div>
+
+      <div>
+        <span>⌘</span>
+        <span>/</span>
+        <p>para ver os atalhos de teclado</p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="go-mini-chat-panel"
+    data-conversations-preview-target="chatPanel"
+    hidden
+  >
+    <header class="go-mini-chat-header">
+      <div class="go-mini-chat-header__contact">
+        <div
+          class="go-mini-chat-header__avatar"
+          data-conversations-preview-target="chatAvatar"
+        >
+          AM
+        </div>
+
+        <div>
+          <strong data-conversations-preview-target="chatName">Ana Martins</strong>
+          <span data-conversations-preview-target="chatMeta">#248 • WhatsApp Oficial</span>
+        </div>
+      </div>
+
+      <div class="go-mini-chat-header__actions">
+        <div class="go-mini-chat-resolve-wrap">
+          <button
+            type="button"
+            class="go-mini-chat-resolve-button"
+            data-conversations-preview-target="resolveButton"
+            data-action="click->conversations-preview#toggleResolveMenu"
+          >
+            Resolver
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+
+          <div
+            class="go-mini-chat-resolve-menu"
+            data-conversations-preview-target="resolveMenu"
+            hidden
+          >
+            <button type="button" data-action="click->conversations-preview#selectResolve">
+              Resolver conversa
+            </button>
+
+            <button type="button" data-action="click->conversations-preview#selectPending">
+              Manter em aberto
+            </button>
+          </div>
+        </div>
+
+        <button type="button" aria-label="Mais opções">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="go-mini-chat-body" data-conversations-preview-target="messages"></div>
+
+    <footer class="go-mini-chat-composer">
+      <div class="go-mini-chat-composer__tabs">
+        <button type="button" class="is-active">Responder</button>
+        <button type="button">Mensagem Privada</button>
+
+        <div>
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <i class="fa-solid fa-expand"></i>
+        </div>
+      </div>
+
+      <div
+        class="go-mini-chat-composer__input"
+        data-conversations-preview-target="replyBox"
+        contenteditable="true"
+      >
+        Shift + enter para nova linha. Digite '/' para selecionar uma Resposta Pronta.
+      </div>
+
+      <div class="go-mini-chat-composer__bottom">
+        <div>
+          <button type="button" aria-label="Emoji">
+            <i class="fa-regular fa-face-smile"></i>
+          </button>
+
+          <button type="button" aria-label="Anexo">
+            <i class="fa-solid fa-paperclip"></i>
+          </button>
+
+          <button type="button" aria-label="Áudio">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+
+          <button type="button" aria-label="Atalho">
+            <i class="fa-solid fa-signature"></i>
+          </button>
+
+          <button type="button" aria-label="Resposta pronta">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          class="go-mini-chat-send-button"
+          data-action="click->conversations-preview#sendReply"
+        >
+          enviar
+          <span>⌘ + ↵</span>
+        </button>
+      </div>
+    </footer>
+  </section>
+
+  <aside
+    class="go-mini-contact-panel"
+    data-conversations-preview-target="detailsPanel"
+    hidden
+  >
+    <header class="go-mini-contact-panel__header">
+      <h3>Contatos</h3>
+
+      <button
+        type="button"
+        aria-label="Fechar detalhes"
+        data-action="click->conversations-preview#closeDetails"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+
+    <div class="go-mini-contact-profile">
+      <div
+        class="go-mini-contact-profile__avatar"
+        data-conversations-preview-target="detailsAvatar"
+      >
+        AM
+      </div>
+
+      <div class="go-mini-contact-profile__name">
+        <h4 data-conversations-preview-target="detailsName">Ana Martins</h4>
+
+        <div>
+          <i class="fa-regular fa-circle-info"></i>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </div>
+      </div>
+
+      <ul class="go-mini-contact-info">
+        <li>
+          <i class="fa-regular fa-envelope"></i>
+          <span data-conversations-preview-target="detailsEmail">ana.martins@email.com</span>
+          <i class="fa-regular fa-copy"></i>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span data-conversations-preview-target="detailsPhone">+55 11 94820-1090</span>
+          <i class="fa-regular fa-copy"></i>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-users"></i>
+          <span data-conversations-preview-target="detailsHandle">5511948201090@s.whatsapp.net</span>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-building-columns"></i>
+          <span data-conversations-preview-target="detailsStatus">Disponível</span>
+        </li>
+      </ul>
+
+      <div class="go-mini-contact-actions">
+        <button type="button">
+          <i class="fa-regular fa-comment-dots"></i>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-pencil"></i>
+        </button>
+
+        <button type="button">
+          <i class="fa-solid fa-arrow-down"></i>
+        </button>
+
+        <button type="button" class="is-danger">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="go-mini-contact-section">
+      <button type="button" class="go-mini-contact-section__title">
+        Ações da conversa
+        <i class="fa-solid fa-minus"></i>
+      </button>
+
+      <div class="go-mini-contact-form">
+        <label>
+          <span>Agente atribuído</span>
+
+          <button type="button">
+            <i class="fa-solid fa-arrow-right"></i>
+            Atribuir a mim
+          </button>
+        </label>
+
+        <select>
+          <option>Nenhum</option>
+          <option>Comercial</option>
+          <option>Suporte</option>
+        </select>
+
+        <label>
+          <span>Time atribuído</span>
+        </label>
+
+        <select>
+          <option>Nenhum</option>
+          <option>Vendas</option>
+          <option>Suporte</option>
+        </select>
+
+        <label>
+          <span>Prioridade</span>
+        </label>
+
+        <select>
+          <option>Nenhuma</option>
+          <option>Alta</option>
+          <option>Média</option>
+          <option>Baixa</option>
+        </select>
+
+        <label>
+          <span>Etiquetas da conversa</span>
+        </label>
+
+        <button type="button" class="go-mini-contact-add-tag">
+          + Adicionar etiquetas
+        </button>
+      </div>
+    </div>
+
+    <div class="go-mini-contact-section go-mini-contact-section--collapsed">
+      <button type="button" class="go-mini-contact-section__title">
+        Kanban
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+
+    <div class="go-mini-contact-section go-mini-contact-section--collapsed">
+      <button type="button" class="go-mini-contact-section__title">
+        Macros
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+
+    <div class="go-mini-contact-section go-mini-contact-section--collapsed">
+      <button type="button" class="go-mini-contact-section__title">
+        Informação da conversa
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </aside>
+
+  <div
+    class="go-mini-quick-modal"
+    data-conversations-preview-target="quickModal"
+    hidden
+  >
+    <div class="go-mini-quick-modal__card">
+      <div class="go-mini-quick-modal__header">
+        <h3>Iniciar conversa rápida</h3>
+
+        <button
+          type="button"
+          aria-label="Fechar"
+          data-action="click->conversations-preview#closeQuickConversation"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <label>
+        <span>Número WhatsApp</span>
+        <input type="text" value="55 11 9 9999-9999">
+      </label>
+
+      <label>
+        <span>Caixa de entrada</span>
+        <input type="text" value="Messenger">
+      </label>
+
+      <label>
+        <span>Mensagem inicial (opcional)</span>
+        <textarea>Olá! Como posso ajudar?</textarea>
+      </label>
+
+      <button
+        type="button"
+        class="go-mini-quick-modal__submit"
+        data-action="click->conversations-preview#startQuickConversation"
+      >
+        Iniciar conversa
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="go-mini-conversation-filter-panel"
+    data-conversations-preview-target="filterPanel"
+    hidden
+  >
+    <h3>Filtrar conversas</h3>
+
+    <div class="go-mini-conversation-filter-rows">
+      <div class="go-mini-conversation-filter-row">
+        <div class="go-mini-filter-select">
+          <button
+            type="button"
+            data-filter-menu-button="field"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="field">Status</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+
+          <div data-filter-menu="field" hidden>
+            <button type="button" data-filter-type="field" data-filter-label-value="Status" data-action="click->conversations-preview#selectFilterOption">Status</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Prioridade" data-action="click->conversations-preview#selectFilterOption">Prioridade</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Agente atribuído" data-action="click->conversations-preview#selectFilterOption">Agente atribuído</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Caixa de Entrada" data-action="click->conversations-preview#selectFilterOption">Caixa de Entrada</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Nome do Time" data-action="click->conversations-preview#selectFilterOption">Nome do Time</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Contact" data-action="click->conversations-preview#selectFilterOption">Contact</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Identificador da conversa" data-action="click->conversations-preview#selectFilterOption">Identificador da conversa</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Nome da campanha" data-action="click->conversations-preview#selectFilterOption">Nome da campanha</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Etiquetas" data-action="click->conversations-preview#selectFilterOption">Etiquetas</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Idioma do navegador" data-action="click->conversations-preview#selectFilterOption">Idioma do navegador</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Link de origem" data-action="click->conversations-preview#selectFilterOption">Link de origem</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Criado em" data-action="click->conversations-preview#selectFilterOption">Criado em</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Última atividade" data-action="click->conversations-preview#selectFilterOption">Última atividade</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Suporte" data-action="click->conversations-preview#selectFilterOption">Suporte</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="numero" data-action="click->conversations-preview#selectFilterOption">numero</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="link" data-action="click->conversations-preview#selectFilterOption">link</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="data" data-action="click->conversations-preview#selectFilterOption">data</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="lista" data-action="click->conversations-preview#selectFilterOption">lista</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Texto" data-action="click->conversations-preview#selectFilterOption">Texto</button>
+          </div>
+        </div>
+
+        <span class="go-mini-filter-equals">=</span>
+
+        <div class="go-mini-filter-select go-mini-filter-select--operator">
+          <button
+            type="button"
+            data-filter-menu-button="operator"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="operator">Igual a</span>
+          </button>
+
+          <div data-filter-menu="operator" hidden>
+            <button type="button" data-filter-type="operator" data-filter-label-value="Igual a" data-action="click->conversations-preview#selectFilterOption">= Igual a</button>
+            <button type="button" data-filter-type="operator" data-filter-label-value="Diferente" data-action="click->conversations-preview#selectFilterOption">≠ Diferente</button>
+          </div>
+        </div>
+
+        <div class="go-mini-filter-select go-mini-filter-select--value">
+          <button
+            type="button"
+            data-filter-menu-button="value"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="value">Abertas</span>
+            <span class="go-mini-filter-value-divider"></span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+
+          <div data-filter-menu="value" hidden>
+            <button type="button" data-filter-type="value" data-filter-label-value="Abertas" data-action="click->conversations-preview#selectFilterOption">Abertas <i class="fa-solid fa-check"></i></button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Resolvidas" data-action="click->conversations-preview#selectFilterOption">Resolvidas</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Pendentes" data-action="click->conversations-preview#selectFilterOption">Pendentes</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Adiadas" data-action="click->conversations-preview#selectFilterOption">Adiadas</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Todas" data-action="click->conversations-preview#selectFilterOption">Todas</button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="go-mini-filter-delete"
+          aria-label="Remover filtro"
+          data-action="click->conversations-preview#resetFilterRow"
+        >
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+      </div>
+
+      <div class="go-mini-conversation-filter-row go-mini-conversation-filter-row--extra" hidden>
+        <span class="go-mini-filter-and">E</span>
+
+        <div class="go-mini-filter-select">
+          <button
+            type="button"
+            data-filter-menu-button="field"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="field">Status</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+
+          <div data-filter-menu="field" hidden>
+            <button type="button" data-filter-type="field" data-filter-label-value="Status" data-action="click->conversations-preview#selectFilterOption">Status</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Prioridade" data-action="click->conversations-preview#selectFilterOption">Prioridade</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Agente atribuído" data-action="click->conversations-preview#selectFilterOption">Agente atribuído</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Caixa de Entrada" data-action="click->conversations-preview#selectFilterOption">Caixa de Entrada</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Nome do Time" data-action="click->conversations-preview#selectFilterOption">Nome do Time</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Contact" data-action="click->conversations-preview#selectFilterOption">Contact</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Identificador da conversa" data-action="click->conversations-preview#selectFilterOption">Identificador da conversa</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Nome da campanha" data-action="click->conversations-preview#selectFilterOption">Nome da campanha</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Etiquetas" data-action="click->conversations-preview#selectFilterOption">Etiquetas</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Idioma do navegador" data-action="click->conversations-preview#selectFilterOption">Idioma do navegador</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Link de origem" data-action="click->conversations-preview#selectFilterOption">Link de origem</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Criado em" data-action="click->conversations-preview#selectFilterOption">Criado em</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Última atividade" data-action="click->conversations-preview#selectFilterOption">Última atividade</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Suporte" data-action="click->conversations-preview#selectFilterOption">Suporte</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="numero" data-action="click->conversations-preview#selectFilterOption">numero</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="link" data-action="click->conversations-preview#selectFilterOption">link</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="data" data-action="click->conversations-preview#selectFilterOption">data</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="lista" data-action="click->conversations-preview#selectFilterOption">lista</button>
+            <button type="button" data-filter-type="field" data-filter-label-value="Texto" data-action="click->conversations-preview#selectFilterOption">Texto</button>
+          </div>
+        </div>
+
+        <span class="go-mini-filter-equals">=</span>
+
+        <div class="go-mini-filter-select go-mini-filter-select--operator">
+          <button
+            type="button"
+            data-filter-menu-button="operator"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="operator">Igual a</span>
+          </button>
+
+          <div data-filter-menu="operator" hidden>
+            <button type="button" data-filter-type="operator" data-filter-label-value="Igual a" data-action="click->conversations-preview#selectFilterOption">= Igual a</button>
+            <button type="button" data-filter-type="operator" data-filter-label-value="Diferente" data-action="click->conversations-preview#selectFilterOption">≠ Diferente</button>
+          </div>
+        </div>
+
+        <div class="go-mini-filter-select go-mini-filter-select--value">
+          <button
+            type="button"
+            data-filter-menu-button="value"
+            data-action="click->conversations-preview#toggleFilterMenu"
+          >
+            <span data-filter-label="value">Selecione uma opção...</span>
+            <span class="go-mini-filter-value-divider"></span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+
+          <div data-filter-menu="value" hidden>
+            <button type="button" data-filter-type="value" data-filter-label-value="Abertas" data-action="click->conversations-preview#selectFilterOption">Abertas</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Resolvidas" data-action="click->conversations-preview#selectFilterOption">Resolvidas</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Pendentes" data-action="click->conversations-preview#selectFilterOption">Pendentes</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Adiadas" data-action="click->conversations-preview#selectFilterOption">Adiadas</button>
+            <button type="button" data-filter-type="value" data-filter-label-value="Todas" data-action="click->conversations-preview#selectFilterOption">Todas</button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="go-mini-filter-delete"
+          aria-label="Remover filtro"
+          data-action="click->conversations-preview#removeExtraFilterRow"
+        >
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="go-mini-conversation-filter-footer">
+      <button
+        type="button"
+        class="go-mini-filter-add"
+        data-action="click->conversations-preview#addFilterRow"
+      >
+        Adicionar filtro
+      </button>
+
+      <div>
+        <button
+          type="button"
+          class="go-mini-filter-clear"
+          data-action="click->conversations-preview#clearFilters"
+        >
+          Limpar filtros
+        </button>
+
+        <button
+          type="button"
+          class="go-mini-filter-apply"
+          data-action="click->conversations-preview#applyFilters"
+        >
+          Aplicar filtros
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
