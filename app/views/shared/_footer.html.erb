@@ -1,44 +1,99 @@
-<footer class="site-footer">
+<footer class="go-footer">
   <div class="container">
-    <div class="site-footer__grid">
-      <div class="site-footer__brand">
-        <%= link_to root_path, class: "site-footer__logo-link", aria: { label: "Ir para a página inicial do GO ATendi" } do %>
-          <span class="site-footer__logo-frame">
-            <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "site-footer__logo-image" %>
-          </span>
+    <div class="go-footer__main">
+      <div class="go-footer__brand">
+        <%= link_to root_path, class: "go-footer__logo-link", aria: { label: "Ir para a página inicial do GO ATendi" } do %>
+          <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "go-footer__logo" %>
         <% end %>
 
-        <p>
-          Atendimento inteligente para empresas que querem responder mais rápido,
-          organizar oportunidades e transformar conversas em vendas.
+        <p class="go-footer__description">
+          O GO ATendi centraliza conversas, automatiza atendimentos e ajuda
+          empresas a organizarem oportunidades em uma única plataforma.
         </p>
+
+        <div class="go-footer__contact-list">
+          <div class="go-footer__contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>(11) 99664-5302</span>
+          </div>
+
+          <div class="go-footer__contact-item">
+            <i class="fa-solid fa-building"></i>
+            <span>56.365.822 YURI HERMENEGILDO GOMES</span>
+          </div>
+
+          <div class="go-footer__contact-item">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Inscrição Estadual: 155.202.120.116</span>
+          </div>
+        </div>
+
+        <div class="go-footer__socials">
+          <a href="#" class="go-footer__social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="go-footer__social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="go-footer__social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="site-footer__column">
-        <h3>Produto</h3>
-        <%= link_to "Soluções", solucoes_path %>
-        <%= link_to "Funcionalidades", funcionalidades_path %>
-        <%= link_to "Resultado", resultado_path %>
-        <%= link_to "Preço", preco_path %>
-      </div>
+      <div class="go-footer__links">
+        <div class="go-footer__column">
+          <h3>Produto</h3>
 
-      <div class="site-footer__column">
-        <h3>Acesso</h3>
-        <%= link_to "Inscrever-se", inscricao_path %>
-        <%= link_to "Entrar", entrar_path %>
-      </div>
+          <ul>
+            <li><%= link_to "Soluções", solucoes_path %></li>
+            <li><%= link_to "Funcionalidades", funcionalidades_path %></li>
+            <li><%= link_to "Resultado", resultado_path %></li>
+            <li><%= link_to "Preço", preco_path %></li>
+            <li><%= link_to "Inscrever-se", inscricao_path %></li>
+          </ul>
+        </div>
 
-      <div class="site-footer__column">
-        <h3>Contato</h3>
-        <p>Comercial GO ATendi</p>
-        <p>contato@goatendi.com.br</p>
-        <p>www.goatendi.com.br</p>
+        <div class="go-footer__column">
+          <h3>Recursos</h3>
+
+          <ul>
+            <li><%= link_to "Blog", "#" %></li>
+            <li><%= link_to "Central de ajuda", "#" %></li>
+            <li><%= link_to "Demonstração", inscricao_path %></li>
+          </ul>
+        </div>
+
+        <div class="go-footer__column">
+          <h3>Conta</h3>
+
+          <ul>
+            <li><%= link_to "Política de Privacidade", privacidade_path %></li>
+            <li><%= link_to "Termos de Serviço", termos_path %></li>
+            <li><%= link_to "Política de Cookies", cookies_policy_path %></li>
+            <li><%= link_to "LGPD", lgpd_path %></li>
+            <li><%= link_to "Exclusão de dados", data_deletion_path %></li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="site-footer__bottom">
-      <p>© <%= Time.current.year %> GO ATendi. Todos os direitos reservados.</p>
-      <p>Produto desenvolvido para atendimento, automação e vendas.</p>
+    <div class="go-footer__bottom">
+      <div class="go-footer__legal">
+        <span>© <%= Time.current.year %> GO ATendi. Desenvolvido por Sollucion</span>
+        <span>CNPJ: 56.365.822/0001-20</span>
+        <span>Todos os direitos reservados</span>
+      </div>
+
+      <div class="go-footer__policy-links">
+        <%= link_to "Privacidade", privacidade_path %>
+        <%= link_to "Termos", termos_path %>
+        <%= link_to "Cookies", cookies_policy_path %>
+        <%= link_to "LGPD", lgpd_path %>
+        <%= link_to "Exclusão de dados", data_deletion_path %>
+      </div>
     </div>
   </div>
 </footer>
