@@ -1,0 +1,246 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Ir para a página inicial do GO ATendi" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "GO ATendi" [ref=e6]
+      - navigation "Navegação principal" [ref=e7]:
+        - link "Soluções" [ref=e8] [cursor=pointer]:
+          - /url: /solucoes
+        - link "Funcionalidades" [ref=e9] [cursor=pointer]:
+          - /url: /funcionalidades
+        - link "Resultado" [ref=e10] [cursor=pointer]:
+          - /url: /resultado
+        - link "Preço" [ref=e11] [cursor=pointer]:
+          - /url: /preco
+      - generic [ref=e12]:
+        - link "Inscrever-se" [ref=e13] [cursor=pointer]:
+          - /url: /cadastro
+        - link "Entrar" [ref=e14] [cursor=pointer]:
+          - /url: /entrar
+  - main [ref=e15]:
+    - generic [ref=e17]:
+      - text:                                                                                      + + +   +    +                                 
+      - generic [ref=e18]:
+        - generic [ref=e19]: Atendimento com automação e inteligência
+        - heading "Transforme conversas em vendas com o GO ATendi" [level=1] [ref=e20]
+        - paragraph [ref=e21]: Uma plataforma para empresas que querem atender mais rápido, organizar leads, automatizar respostas e acompanhar oportunidades em um único fluxo.
+        - generic [ref=e22]:
+          - link "Quero me inscrever" [ref=e23] [cursor=pointer]:
+            - /url: /cadastro
+          - link "Ver funcionalidades" [ref=e24] [cursor=pointer]:
+            - /url: /funcionalidades
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e28]: 
+            - generic [ref=e29]:
+              - strong [ref=e30]: Atendimento 24h
+              - generic [ref=e31]: Respostas automáticas para o primeiro contato.
+          - generic [ref=e32]:
+            - generic [ref=e34]: 
+            - generic [ref=e35]:
+              - strong [ref=e36]: Leads no controle
+              - generic [ref=e37]: Mais clareza sobre cada oportunidade.
+          - generic [ref=e38]:
+            - generic [ref=e40]: 
+            - generic [ref=e41]:
+              - strong [ref=e42]: Automação com IA
+              - generic [ref=e43]: Fluxos inteligentes apoiando o atendimento.
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: Por que o GO ATendi?
+        - heading "Uma operação comercial mais organizada desde o primeiro contato" [level=2] [ref=e48]
+        - paragraph [ref=e49]: O GO ATendi foi pensado para empresas que recebem mensagens todos os dias e precisam responder com agilidade sem perder qualidade no atendimento.
+      - generic [ref=e50]:
+        - article [ref=e51]:
+          - generic [ref=e52]: "01"
+          - heading "Atendimento mais rápido" [level=3] [ref=e53]
+          - paragraph [ref=e54]: Respostas iniciais automatizadas ajudam sua empresa a não perder oportunidades por demora no primeiro contato.
+        - article [ref=e55]:
+          - generic [ref=e56]: "02"
+          - heading "Leads organizados" [level=3] [ref=e57]
+          - paragraph [ref=e58]: Cada conversa pode virar uma oportunidade acompanhada com mais clareza pelo time comercial.
+        - article [ref=e59]:
+          - generic [ref=e60]: "03"
+          - heading "Fluxos inteligentes" [level=3] [ref=e61]
+          - paragraph [ref=e62]: Crie caminhos de atendimento para dúvidas frequentes, qualificação, agendamento e direcionamento.
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]: Soluções
+        - heading "Feito para quem vende, atende e precisa acompanhar cada oportunidade" [level=2] [ref=e67]
+        - paragraph [ref=e68]: Da primeira mensagem até o encaminhamento para um vendedor, o GO ATendi ajuda sua empresa a construir uma experiência mais fluida.
+        - link "Conhecer soluções" [ref=e69] [cursor=pointer]:
+          - /url: /solucoes
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - strong [ref=e72]: Captação de leads
+          - generic [ref=e73]: Receba contatos e organize informações importantes logo no início da conversa.
+        - generic [ref=e74]:
+          - strong [ref=e75]: Pré-atendimento
+          - generic [ref=e76]: Automatize dúvidas comuns e direcione casos mais importantes ao time.
+        - generic [ref=e77]:
+          - strong [ref=e78]: Comercial consultivo
+          - generic [ref=e79]: Ajude vendedores a entenderem contexto, interesse e estágio do lead.
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - generic [ref=e83]: Funcionalidades
+        - heading "Recursos essenciais para profissionalizar o atendimento" [level=2] [ref=e84]
+      - generic [ref=e85]:
+        - article [ref=e86]:
+          - generic [ref=e87]: ✓
+          - heading "Fluxos de conversa" [level=3] [ref=e88]
+          - paragraph [ref=e89]: Estruture jornadas para dúvidas, vendas, suporte e agendamentos.
+        - article [ref=e90]:
+          - generic [ref=e91]: ✓
+          - heading "Qualificação" [level=3] [ref=e92]
+          - paragraph [ref=e93]: Capture nome, contato, interesse e prioridade antes do atendimento humano.
+        - article [ref=e94]:
+          - generic [ref=e95]: ✓
+          - heading "Histórico" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Organize interações para acompanhar cada oportunidade com mais contexto.
+        - article [ref=e98]:
+          - generic [ref=e99]: ✓
+          - heading "Encaminhamento" [level=3] [ref=e100]
+          - paragraph [ref=e101]: Direcione o lead para o próximo passo com menos atrito operacional.
+      - link "Ver todas as funcionalidades" [ref=e103] [cursor=pointer]:
+        - /url: /funcionalidades
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: Antes e depois
+        - heading "De mensagens soltas para uma operação acompanhada" [level=2] [ref=e109]
+        - paragraph [ref=e110]: Com o GO ATendi, sua empresa sai de um atendimento manual e difícil de acompanhar para um fluxo mais claro, organizado e preparado para vender melhor.
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e114]: Antes
+          - generic [ref=e115]:
+            - generic [ref=e116]: 
+            - generic [ref=e117]: Atendimento manual sem padrão
+          - generic [ref=e118]:
+            - generic [ref=e119]: 
+            - generic [ref=e120]: Leads esquecidos em conversas antigas
+          - generic [ref=e121]:
+            - generic [ref=e122]: 
+            - generic [ref=e123]: Demora para responder dúvidas simples
+          - generic [ref=e124]:
+            - generic [ref=e125]: 
+            - generic [ref=e126]: Pouca clareza sobre o interesse do cliente
+        - generic [ref=e127]:
+          - generic [ref=e129]: Com GO ATendi
+          - generic [ref=e130]:
+            - generic [ref=e131]: 
+            - generic [ref=e132]: Fluxos de conversa bem definidos
+          - generic [ref=e133]:
+            - generic [ref=e134]: 
+            - generic [ref=e135]: Dados iniciais do lead organizados
+          - generic [ref=e136]:
+            - generic [ref=e137]: 
+            - generic [ref=e138]: Atendimento inicial mais rápido
+          - generic [ref=e139]:
+            - generic [ref=e140]: 
+            - generic [ref=e141]: Próximo passo mais claro para o time
+      - link "Ver resultados " [ref=e143] [cursor=pointer]:
+        - /url: /resultado
+        - generic [ref=e144]: Ver resultados
+        - generic [ref=e145]: 
+    - generic [ref=e147]:
+      - generic [ref=e148]: Próximo passo
+      - heading "Pronto para organizar seu atendimento?" [level=2] [ref=e149]
+      - paragraph [ref=e150]: Inscreva-se para receber uma apresentação do produto e entender como o GO ATendi pode se encaixar na sua operação.
+      - generic [ref=e151]:
+        - link "Quero me inscrever" [ref=e152] [cursor=pointer]:
+          - /url: /cadastro
+        - link "Ver funcionalidades" [ref=e153] [cursor=pointer]:
+          - /url: /funcionalidades
+  - contentinfo [ref=e154]:
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - link "Ir para a página inicial do GO ATendi" [ref=e158] [cursor=pointer]:
+            - /url: /
+            - img "GO ATendi" [ref=e159]
+          - paragraph [ref=e160]: O GO ATendi centraliza conversas, automatiza atendimentos e ajuda empresas a organizarem oportunidades em uma única plataforma.
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - generic [ref=e163]: 
+              - generic [ref=e164]: (11) 99664-5302
+            - generic [ref=e165]:
+              - generic [ref=e166]: 
+              - generic [ref=e167]: 56.365.822 YURI HERMENEGILDO GOMES
+            - generic [ref=e168]:
+              - generic [ref=e169]: 
+              - generic [ref=e170]: "Inscrição Estadual: 155.202.120.116"
+          - generic [ref=e171]:
+            - link "Instagram" [ref=e172] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e173]: 
+            - link "Facebook" [ref=e174] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e175]: 
+            - link "LinkedIn" [ref=e176] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e177]: 
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - heading "Produto" [level=3] [ref=e180]
+            - list [ref=e181]:
+              - listitem [ref=e182]:
+                - link "Soluções" [ref=e183] [cursor=pointer]:
+                  - /url: /solucoes
+              - listitem [ref=e184]:
+                - link "Funcionalidades" [ref=e185] [cursor=pointer]:
+                  - /url: /funcionalidades
+              - listitem [ref=e186]:
+                - link "Resultado" [ref=e187] [cursor=pointer]:
+                  - /url: /resultado
+              - listitem [ref=e188]:
+                - link "Preço" [ref=e189] [cursor=pointer]:
+                  - /url: /preco
+              - listitem [ref=e190]:
+                - link "Inscrever-se" [ref=e191] [cursor=pointer]:
+                  - /url: /cadastro
+          - generic [ref=e192]:
+            - heading "Recursos" [level=3] [ref=e193]
+            - list [ref=e194]:
+              - listitem [ref=e195]:
+                - link "Blog" [ref=e196] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e197]:
+                - link "Central de ajuda" [ref=e198] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e199]:
+                - link "Demonstração" [ref=e200] [cursor=pointer]:
+                  - /url: /cadastro
+          - generic [ref=e201]:
+            - heading "Conta" [level=3] [ref=e202]
+            - list [ref=e203]:
+              - listitem [ref=e204]:
+                - link "Política de Privacidade" [ref=e205] [cursor=pointer]:
+                  - /url: /privacidade
+              - listitem [ref=e206]:
+                - link "Termos de Serviço" [ref=e207] [cursor=pointer]:
+                  - /url: /termos
+              - listitem [ref=e208]:
+                - link "Política de Cookies" [ref=e209] [cursor=pointer]:
+                  - /url: /cookies
+              - listitem [ref=e210]:
+                - link "LGPD" [ref=e211] [cursor=pointer]:
+                  - /url: /lgpd
+              - listitem [ref=e212]:
+                - link "Exclusão de dados" [ref=e213] [cursor=pointer]:
+                  - /url: /exclusao-de-dados
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - generic [ref=e216]: © 2026 GO ATendi. Desenvolvido por Sollucion•
+          - generic [ref=e217]: "CNPJ: 56.365.822/0001-20•"
+          - generic [ref=e218]: Todos os direitos reservados
+        - generic [ref=e219]:
+          - link "Privacidade" [ref=e220] [cursor=pointer]:
+            - /url: /privacidade
+          - link "Termos" [ref=e221] [cursor=pointer]:
+            - /url: /termos
+          - link "Cookies" [ref=e222] [cursor=pointer]:
+            - /url: /cookies
+          - link "LGPD" [ref=e223] [cursor=pointer]:
+            - /url: /lgpd
+          - link "Exclusão de dados" [ref=e224] [cursor=pointer]:
+            - /url: /exclusao-de-dados

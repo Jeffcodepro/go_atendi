@@ -9,7 +9,7 @@ class LeadsController < ApplicationController
     @lead.source = params[:source].presence || @lead.source.presence || "website"
 
     if @lead.save
-      redirect_to inscricao_path, notice: "Recebemos seu interesse no GO ATendi. Em breve entraremos em contato."
+      redirect_to new_user_registration_path, notice: "Recebemos seu interesse no GO ATendi. Em breve entraremos em contato."
     else
       @plans = Plan.active.ordered
       render :new, status: :unprocessable_entity

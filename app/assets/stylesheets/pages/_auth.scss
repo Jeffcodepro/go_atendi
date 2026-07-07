@@ -1,0 +1,541 @@
+.go-auth-page {
+  position: relative;
+  min-height: calc(100vh - 82px);
+  padding: 84px 0 104px;
+  background:
+    radial-gradient(circle at top left, rgba(0, 166, 81, 0.11), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(7, 21, 47, 0.06), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%);
+}
+
+.go-auth-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) 430px;
+  gap: 46px;
+  align-items: stretch;
+}
+
+.go-auth-panel {
+  min-height: 620px;
+  padding: 46px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 166, 81, 0.16), transparent 38%),
+    linear-gradient(145deg, #07152f 0%, #0d243f 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.go-auth-panel::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -90px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 42px solid rgba(0, 166, 81, 0.16);
+}
+
+.go-auth-panel__logo-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 44px;
+  text-decoration: none;
+}
+
+.go-auth-panel__logo {
+  display: block;
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.14));
+}
+
+.go-auth-badge {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(0, 166, 81, 0.16);
+  border: 1px solid rgba(0, 166, 81, 0.26);
+  color: #7dffb6;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.go-auth-panel h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 22px 0 0;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 950;
+}
+
+.go-auth-panel p {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.go-auth-highlights {
+  position: relative;
+  z-index: 1;
+  margin-top: 38px;
+  display: grid;
+  gap: 14px;
+}
+
+.go-auth-highlights div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.go-auth-highlights i {
+  width: 34px;
+  height: 34px;
+  border-radius: 13px;
+  background: rgba(0, 166, 81, 0.18);
+  color: #7dffb6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.go-auth-form-card {
+  padding: 38px;
+  border-radius: 34px;
+  background: #ffffff;
+  border: 1px solid rgba(7, 21, 47, 0.08);
+  box-shadow: 0 24px 70px rgba(7, 21, 47, 0.08);
+  align-self: center;
+}
+
+.go-auth-form-card__header {
+  margin-bottom: 28px;
+}
+
+.go-auth-form-card__header h2 {
+  margin: 0;
+  color: var(--go-dark, #07152f);
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  font-weight: 950;
+}
+
+.go-auth-form-card__header p {
+  margin: 10px 0 0;
+  color: var(--go-muted, #5b6675);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.go-auth-form {
+  display: grid;
+  gap: 18px;
+}
+
+.go-auth-field {
+  display: grid;
+  gap: 8px;
+}
+
+.go-auth-field label {
+  color: var(--go-dark, #07152f);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.go-auth-field input {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 16px;
+  border: 1px solid rgba(7, 21, 47, 0.12);
+  background: #ffffff;
+  color: var(--go-dark, #07152f);
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 0 16px;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.go-auth-field input::placeholder {
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.go-auth-field input:focus {
+  border-color: rgba(0, 166, 81, 0.55);
+  box-shadow: 0 0 0 4px rgba(0, 166, 81, 0.1);
+}
+
+.go-auth-field small {
+  color: #7b8492;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.go-auth-options {
+  margin-top: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.go-auth-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #4c596b;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.go-auth-remember input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #00a651;
+}
+
+.go-auth-options a {
+  color: #00a651;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.go-auth-options a:hover {
+  text-decoration: underline;
+}
+
+.go-auth-submit {
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  border-radius: 999px;
+  background: #00a651;
+  color: #06101f;
+  font-size: 1rem;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 18px 36px rgba(0, 166, 81, 0.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.go-auth-submit:hover {
+  background: #008f45;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.go-auth-form-card__legal {
+  margin-top: 18px;
+  color: #7b8492;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.go-auth-form-card__legal a {
+  color: #00a651;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.go-auth-form-card__legal a:hover {
+  text-decoration: underline;
+}
+
+.go-auth-form-card__footer {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(7, 21, 47, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--go-muted, #5b6675);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.go-auth-form-card__footer a {
+  color: #00a651;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.go-auth-form-card__footer a:hover {
+  text-decoration: underline;
+}
+
+.go-auth-errors {
+  margin-bottom: 22px;
+  padding: 15px 16px;
+  border-radius: 18px;
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.go-auth-errors strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 950;
+}
+
+.go-auth-errors ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.go-auth-errors li {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1080px) {
+  .go-auth-page {
+    padding: 72px 0 88px;
+  }
+
+  .go-auth-shell {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    gap: 28px;
+  }
+
+  .go-auth-panel {
+    min-height: auto;
+    padding: 38px;
+  }
+
+  .go-auth-panel__logo-link {
+    margin-bottom: 34px;
+  }
+
+  .go-auth-panel h1 {
+    max-width: 100%;
+  }
+
+  .go-auth-panel p {
+    max-width: 100%;
+  }
+
+  .go-auth-form-card {
+    align-self: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .go-auth-page {
+    min-height: auto;
+    padding: 48px 0 68px;
+  }
+
+  .go-auth-shell {
+    gap: 22px;
+  }
+
+  .go-auth-panel {
+    padding: 28px;
+    border-radius: 28px;
+  }
+
+  .go-auth-panel__logo-link {
+    margin-bottom: 28px;
+  }
+
+  .go-auth-panel__logo {
+    width: 178px;
+  }
+
+  .go-auth-panel h1 {
+    font-size: clamp(2.25rem, 12vw, 3.6rem);
+  }
+
+  .go-auth-panel p {
+    margin-top: 18px;
+    font-size: 0.96rem;
+  }
+
+  .go-auth-highlights {
+    margin-top: 28px;
+  }
+
+  .go-auth-highlights div {
+    align-items: flex-start;
+    font-size: 0.9rem;
+  }
+
+  .go-auth-form-card {
+    padding: 26px;
+    border-radius: 28px;
+  }
+
+  .go-auth-form-card__header h2 {
+    font-size: 1.72rem;
+  }
+
+  .go-auth-options {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .go-auth-form-card__footer {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
+
+.go-auth-social {
+  margin-bottom: 26px;
+}
+
+.go-auth-social__button {
+  width: 100%;
+  height: 58px;
+  border: 0;
+  border-radius: 12px;
+  background: #242a3a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.go-auth-social__button i {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.go-auth-social__button:hover {
+  background: #2d3448;
+  transform: translateY(-1px);
+}
+
+.go-auth-divider {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.go-auth-divider::before,
+.go-auth-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.go-auth-divider span {
+  line-height: 1;
+}
+
+.go-auth-social {
+  margin-bottom: 26px;
+}
+
+.go-auth-social__button {
+  width: 100%;
+  height: 58px;
+  border: 0;
+  border-radius: 12px;
+  background: #242a3a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.go-auth-social__button i {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.go-auth-social__button:hover {
+  background: #2d3448;
+  transform: translateY(-1px);
+}
+
+.go-auth-divider {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.go-auth-divider::before,
+.go-auth-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.go-auth-divider span {
+  white-space: nowrap;
+}

@@ -1,7 +1,7 @@
 <% content_for :page_title, "Atendimento inteligente para vender mais" %>
 <% content_for :meta_description, "GO ATendi centraliza conversas, automatiza atendimentos e ajuda empresas a vender mais pelo WhatsApp e canais digitais." %>
 
-<section class="hero-section hero-section--with-preview">
+<section class="hero-section hero-section--with-preview hero-section--preview-hidden">
   <div class="container">
     <div class="hero-section__preview">
       <%= render "pages/product_preview" %>
@@ -21,24 +21,42 @@
       </p>
 
       <div class="hero-section__actions">
-        <%= link_to "Quero me inscrever", inscricao_path, class: "btn btn--primary btn--large" %>
+        <%= link_to "Quero me inscrever", new_user_registration_path, class: "btn btn--primary btn--large" %>
         <%= link_to "Ver funcionalidades", funcionalidades_path, class: "btn btn--secondary btn--large" %>
       </div>
 
       <div class="hero-section__proof">
-        <div>
-          <strong>24h</strong>
-          <span>respostas automáticas</span>
+        <div class="hero-proof-card">
+          <div class="hero-proof-card__icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+
+          <div class="hero-proof-card__content">
+            <strong>Atendimento 24h</strong>
+            <span>Respostas automáticas para o primeiro contato.</span>
+          </div>
         </div>
 
-        <div>
-          <strong>+controle</strong>
-          <span>sobre cada lead</span>
+        <div class="hero-proof-card">
+          <div class="hero-proof-card__icon">
+            <i class="fa-solid fa-filter-circle-dollar"></i>
+          </div>
+
+          <div class="hero-proof-card__content">
+            <strong>Leads no controle</strong>
+            <span>Mais clareza sobre cada oportunidade.</span>
+          </div>
         </div>
 
-        <div>
-          <strong>IA</strong>
-          <span>apoiando o atendimento</span>
+        <div class="hero-proof-card">
+          <div class="hero-proof-card__icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+
+          <div class="hero-proof-card__content">
+            <strong>Automação com IA</strong>
+            <span>Fluxos inteligentes apoiando o atendimento.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -49,7 +67,9 @@
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">Por que o GO ATendi?</span>
+
       <h2>Uma operação comercial mais organizada desde o primeiro contato</h2>
+
       <p>
         O GO ATendi foi pensado para empresas que recebem mensagens todos os dias
         e precisam responder com agilidade sem perder qualidade no atendimento.
@@ -59,7 +79,9 @@
     <div class="cards-grid cards-grid--three">
       <article class="feature-card">
         <div class="feature-card__icon">01</div>
+
         <h3>Atendimento mais rápido</h3>
+
         <p>
           Respostas iniciais automatizadas ajudam sua empresa a não perder
           oportunidades por demora no primeiro contato.
@@ -68,7 +90,9 @@
 
       <article class="feature-card">
         <div class="feature-card__icon">02</div>
+
         <h3>Leads organizados</h3>
+
         <p>
           Cada conversa pode virar uma oportunidade acompanhada com mais clareza
           pelo time comercial.
@@ -77,7 +101,9 @@
 
       <article class="feature-card">
         <div class="feature-card__icon">03</div>
+
         <h3>Fluxos inteligentes</h3>
+
         <p>
           Crie caminhos de atendimento para dúvidas frequentes, qualificação,
           agendamento e direcionamento.
@@ -105,6 +131,7 @@
     <div class="solution-list">
       <div class="solution-list__item">
         <strong>Captação de leads</strong>
+
         <span>
           Receba contatos e organize informações importantes logo no início da conversa.
         </span>
@@ -112,6 +139,7 @@
 
       <div class="solution-list__item">
         <strong>Pré-atendimento</strong>
+
         <span>
           Automatize dúvidas comuns e direcione casos mais importantes ao time.
         </span>
@@ -119,6 +147,7 @@
 
       <div class="solution-list__item">
         <strong>Comercial consultivo</strong>
+
         <span>
           Ajude vendedores a entenderem contexto, interesse e estágio do lead.
         </span>
@@ -131,6 +160,7 @@
   <div class="container">
     <div class="section-heading">
       <span class="eyebrow">Funcionalidades</span>
+
       <h2>Recursos essenciais para profissionalizar o atendimento</h2>
     </div>
 
@@ -166,31 +196,81 @@
   </div>
 </section>
 
-<section class="section section--dark">
-  <div class="container results-band">
-    <div>
-      <span class="eyebrow eyebrow--light">Resultado</span>
-      <h2>Menos mensagens perdidas. Mais oportunidades acompanhadas.</h2>
+<section class="section go-before-after-section">
+  <div class="container">
+    <div class="go-before-after">
+      <div class="go-before-after__header">
+        <span class="eyebrow">Antes e depois</span>
+
+        <h2>De mensagens soltas para uma operação acompanhada</h2>
+
+        <p>
+          Com o GO ATendi, sua empresa sai de um atendimento manual e difícil de
+          acompanhar para um fluxo mais claro, organizado e preparado para vender melhor.
+        </p>
+      </div>
+
+      <div class="go-before-after__table">
+        <div class="go-before-after__column go-before-after__column--before">
+          <div class="go-before-after__title">
+            <span>Antes</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-minus"></i>
+            <span>Atendimento manual sem padrão</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-minus"></i>
+            <span>Leads esquecidos em conversas antigas</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-minus"></i>
+            <span>Demora para responder dúvidas simples</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-minus"></i>
+            <span>Pouca clareza sobre o interesse do cliente</span>
+          </div>
+        </div>
+
+        <div class="go-before-after__column go-before-after__column--after">
+          <div class="go-before-after__title">
+            <span>Com GO ATendi</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-check"></i>
+            <span>Fluxos de conversa bem definidos</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-check"></i>
+            <span>Dados iniciais do lead organizados</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-check"></i>
+            <span>Atendimento inicial mais rápido</span>
+          </div>
+
+          <div class="go-before-after__item">
+            <i class="fa-solid fa-check"></i>
+            <span>Próximo passo mais claro para o time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="go-before-after__action">
+        <%= link_to resultado_path, class: "go-before-after__button" do %>
+          <span>Ver resultados</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        <% end %>
+      </div>
     </div>
-
-    <div class="results-band__grid">
-      <div>
-        <strong>+ agilidade</strong>
-        <span>no primeiro contato</span>
-      </div>
-
-      <div>
-        <strong>+ clareza</strong>
-        <span>para o time comercial</span>
-      </div>
-
-      <div>
-        <strong>+ padrão</strong>
-        <span>na experiência do cliente</span>
-      </div>
-    </div>
-
-    <%= link_to "Ver resultados", resultado_path, class: "btn btn--light" %>
   </div>
 </section>
 
@@ -206,8 +286,8 @@
     </p>
 
     <div class="final-cta__actions">
-      <%= link_to "Inscrever-se", inscricao_path, class: "btn btn--primary btn--large" %>
-      <%= link_to "Ver preço", preco_path, class: "btn btn--secondary btn--large" %>
+      <%= link_to "Quero me inscrever", new_user_registration_path, class: "btn btn--primary btn--large" %>
+      <%= link_to "Ver funcionalidades", funcionalidades_path, class: "btn btn--secondary btn--large" %>
     </div>
   </div>
 </section>
