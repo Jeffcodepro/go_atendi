@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   root "pages#home"
 
+  devise_for :users,
+             path: "",
+             path_names: {
+               sign_in: "entrar",
+               sign_out: "sair",
+               sign_up: "cadastro"
+             },
+             controllers: {
+               omniauth_callbacks: "users/omniauth_callbacks"
+             }
+
+
   get "privacidade", to: "pages#privacidade", as: :privacidade
   get "termos", to: "pages#termos", as: :termos
   get "cookies", to: "pages#cookies_policy", as: :cookies_policy
@@ -12,8 +24,4 @@ Rails.application.routes.draw do
   get "resultado", to: "results#index", as: :resultado
   get "preco", to: "pricing#index", as: :preco
 
-  get "inscrever-se", to: "leads#new", as: :inscricao
-  post "inscrever-se", to: "leads#create"
-
-  get "entrar", to: "access#login", as: :entrar
 end

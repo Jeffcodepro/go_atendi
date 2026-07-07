@@ -1,0 +1,15 @@
+<div class="go-auth-social">
+  <% if respond_to?(:user_google_oauth2_omniauth_authorize_path) %>
+    <%= button_to user_google_oauth2_omniauth_authorize_path,
+                  method: :post,
+                  data: { turbo: false },
+                  class: "go-auth-social__button" do %>
+      <i class="fa-brands fa-google"></i>
+      <span>Continuar com Google</span>
+    <% end %>
+  <% end %>
+
+  <div class="go-auth-divider">
+    <span>ou entre com e-mail</span>
+  </div>
+</div>

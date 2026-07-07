@@ -1,0 +1,83 @@
+<% content_for :page_title, "Entrar" %>
+<% content_for :meta_description, "Acesse sua conta no GO ATendi." %>
+
+<section class="go-auth-page">
+  <div class="container">
+    <div class="go-auth-shell">
+      <div class="go-auth-panel">
+        <%= link_to root_path, class: "go-auth-panel__logo-link" do %>
+          <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "go-auth-panel__logo" %>
+        <% end %>
+
+        <span class="go-auth-badge">Login</span>
+
+        <h1>Bem-vindo de volta</h1>
+
+        <p>
+          Entre para acompanhar conversas, leads, automações e oportunidades da sua operação.
+        </p>
+
+        <div class="go-auth-highlights">
+          <div>
+            <i class="fa-solid fa-inbox"></i>
+            <span>Atendimento organizado</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-robot"></i>
+            <span>Fluxos automatizados</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-user-check"></i>
+            <span>Mais clareza para o time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="go-auth-form-card">
+        <div class="go-auth-form-card__header">
+          <h2>Entrar</h2>
+
+          <p>
+            Acesse sua conta para continuar.
+          </p>
+        </div>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <%= render "devise/shared/social_buttons" %>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "go-auth-form" }) do |f| %>
+          <div class="go-auth-field">
+            <%= f.label :email, "E-mail" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "seuemail@empresa.com" %>
+          </div>
+
+          <div class="go-auth-field">
+            <%= f.label :password, "Senha" %>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "Digite sua senha" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="go-auth-options">
+              <label class="go-auth-remember">
+                <%= f.check_box :remember_me %>
+                <span>Lembrar de mim</span>
+              </label>
+
+              <%= link_to "Esqueci minha senha", new_user_password_path %>
+            </div>
+          <% end %>
+
+          <%= f.submit "Entrar na minha conta", class: "go-auth-submit" %>
+        <% end %>
+
+        <div class="go-auth-form-card__footer">
+          <span>Ainda não tem uma conta?</span>
+          <%= link_to "Criar conta", new_user_registration_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

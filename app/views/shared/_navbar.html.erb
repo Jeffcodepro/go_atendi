@@ -16,8 +16,8 @@
     </nav>
 
     <div class="marketing-nav__actions">
-      <%= link_to "Inscrever-se", inscricao_path, class: "btn btn--primary btn--nav #{active_nav.call(inscricao_path)}" %>
-      <%= link_to "Entrar", entrar_path, class: "btn btn--ghost btn--nav #{active_nav.call(entrar_path)}" %>
+      <%= link_to "Inscrever-se", new_user_registration_path, class: "btn btn--primary btn--nav #{active_nav.call(new_user_registration_path)}" %>
+      <%= link_to "Entrar", new_user_session_path, class: "btn btn--ghost btn--nav #{active_nav.call(new_user_session_path)}" %>
     </div>
 
     <details class="marketing-nav__mobile">
@@ -34,8 +34,8 @@
         <%= link_to "Preço", preco_path, class: "marketing-nav__mobile-link #{active_nav.call(preco_path)}" %>
 
         <div class="marketing-nav__mobile-actions">
-          <%= link_to "Inscrever-se", inscricao_path, class: "btn btn--primary btn--full" %>
-          <%= link_to "Entrar", entrar_path, class: "btn btn--ghost btn--full" %>
+          <%= link_to "Inscrever-se", new_user_registration_path, class: "btn btn--primary btn--full" %>
+          <%= link_to "Entrar", new_user_session_path, class: "btn btn--ghost btn--nav #{active_nav.call(new_user_session_path)}" %>
         </div>
       </div>
     </details>

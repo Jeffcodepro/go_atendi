@@ -1,44 +1,21 @@
 <% content_for :page_title, "Preço" %>
 <% content_for :meta_description, "Conheça os planos do GO ATendi para empresas que querem automatizar atendimento, organizar leads e vender melhor." %>
 
-<% fallback_plans = [
+<% workflow_tiers = [
   {
-    name: "Start",
-    price: "Sob consulta",
-    description: "Para empresas que querem iniciar a organização do atendimento digital.",
-    highlighted: false,
-    features: [
-      "Fluxo inicial de atendimento",
-      "Coleta de dados do lead",
-      "Direcionamento para contato humano",
-      "Suporte de implantação"
-    ]
+    quantity: "5 workflows",
+    profile: "Estrutura inicial",
+    note: "Menor escopo de automação, indicado para começar pelos fluxos mais importantes."
   },
   {
-    name: "Professional",
-    price: "Sob consulta",
-    description: "Para operações que precisam de mais automação e acompanhamento comercial.",
-    highlighted: true,
-    features: [
-      "Fluxos personalizados",
-      "Qualificação de leads",
-      "Múltiplos caminhos de atendimento",
-      "Acompanhamento comercial",
-      "Suporte prioritário"
-    ]
+    quantity: "10 workflows",
+    profile: "Operação em expansão",
+    note: "Acréscimo sobre a base para incluir mais caminhos de atendimento e qualificação."
   },
   {
-    name: "Business",
-    price: "Sob consulta",
-    description: "Para empresas com operação mais robusta e necessidade de fluxos avançados.",
-    highlighted: false,
-    features: [
-      "Estratégia de atendimento",
-      "Fluxos avançados",
-      "Integrações sob análise",
-      "Treinamento do time",
-      "Acompanhamento de evolução"
-    ]
+    quantity: "15 workflows",
+    profile: "Operação mais robusta",
+    note: "Maior nível de personalização, com escopo mais amplo e investimento progressivo."
   }
 ] %>
 
@@ -47,44 +24,60 @@
     <span class="eyebrow">Preço</span>
 
     <h1>
-      Planos para empresas que querem profissionalizar o atendimento
+      Um plano personalizado que cresce com a quantidade de workflows
     </h1>
 
     <p>
-      Escolha o melhor ponto de partida para sua operação. Os valores podem
-      variar de acordo com volume, integrações e nível de personalização.
+      Em vez de planos fechados, o GO ATendi trabalha com uma estrutura única.
+      O valor evolui conforme a quantidade de workflows que sua operação precisa
+      automatizar.
     </p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="pricing-grid">
-      <% fallback_plans.each do |plan| %>
-        <article class="pricing-card <%= 'pricing-card--highlighted' if plan[:highlighted] %>">
-          <% if plan[:highlighted] %>
-            <span class="pricing-card__badge">Mais recomendado</span>
+    <div class="pricing-shell">
+      <article class="pricing-card pricing-card--custom pricing-card--highlighted">
+        <span class="pricing-card__badge">Plano unico</span>
+
+        <div class="pricing-card__header">
+          <h2>Plano personalizado</h2>
+          <p>
+            A proposta parte de uma base consultiva e recebe acréscimos conforme
+            a quantidade de workflows desenhados para o seu atendimento.
+          </p>
+        </div>
+
+        <div class="pricing-card__price">
+          <strong>Sob consulta</strong>
+          <span>valor montado de acordo com a quantidade de workflows e o escopo da implantação</span>
+        </div>
+
+        <ul class="pricing-card__features">
+          <li>Mapeamento do fluxo comercial e do atendimento atual</li>
+          <li>Definição dos workflows prioritários para automação</li>
+          <li>Implantação personalizada conforme o cenário da empresa</li>
+          <li>Evolução de escopo com acréscimo progressivo de investimento</li>
+        </ul>
+
+        <div class="workflow-scale">
+          <% workflow_tiers.each do |tier| %>
+            <article class="workflow-scale__item">
+              <strong><%= tier[:quantity] %></strong>
+              <span><%= tier[:profile] %></span>
+              <p><%= tier[:note] %></p>
+            </article>
           <% end %>
+        </div>
 
-          <div class="pricing-card__header">
-            <h2><%= plan[:name] %></h2>
-            <p><%= plan[:description] %></p>
-          </div>
+        <p class="pricing-card__footnote">
+          Quanto maior a quantidade de workflows escolhidos, maior o nível de
+          personalização e o investimento da proposta.
+        </p>
 
-          <div class="pricing-card__price">
-            <strong><%= plan[:price] %></strong>
-            <span>definido após diagnóstico</span>
-          </div>
-
-          <ul class="pricing-card__features">
-            <% plan[:features].each do |feature| %>
-              <li><%= feature %></li>
-            <% end %>
-          </ul>
-
-          <%= link_to "Tenho interesse", inscricao_path(interest: "preco"), class: "btn #{plan[:highlighted] ? 'btn--primary' : 'btn--secondary'} btn--full" %>
-        </article>
-      <% end %>
+        <%= link_to "Solicitar proposta personalizada", new_user_registration_path(interest: "preco"), class: "btn btn--primary btn--full" %>
+      </article>
     </div>
   </div>
 </section>
@@ -93,14 +86,14 @@
   <div class="container split-section">
     <div class="split-section__content">
       <span class="eyebrow">Como funciona</span>
-      <h2>O preço acompanha a complexidade da sua operação</h2>
+      <h2>O valor acompanha a quantidade de workflows contratados</h2>
       <p>
-        Antes de definir o melhor plano, entendemos como sua empresa atende hoje,
-        quais canais utiliza, quais fluxos precisa automatizar e qual nível de
-        personalização faz sentido.
+        Antes de apresentar a proposta, entendemos como sua empresa atende hoje,
+        quais workflows precisam ser construídos primeiro e qual volume de
+        automação faz mais sentido para a operação.
       </p>
 
-      <%= link_to "Solicitar diagnóstico", inscricao_path(interest: "preco"), class: "btn btn--primary" %>
+      <%= link_to "Solicitar diagnóstico", new_user_registration_path(interest: "preco"), class: "btn btn--primary" %>
     </div>
 
     <div class="process-card">
@@ -115,8 +108,8 @@
       <div class="process-step">
         <span>2</span>
         <div>
-          <strong>Mapeamos a necessidade</strong>
-          <p>Avaliamos volume, fluxos, canais e objetivo comercial.</p>
+          <strong>Definimos a faixa de workflows</strong>
+          <p>Estruturamos se a sua operação começa com 5, 10 ou 15 workflows.</p>
         </div>
       </div>
 
@@ -124,7 +117,7 @@
         <span>3</span>
         <div>
           <strong>Apresentamos a proposta</strong>
-          <p>Você recebe uma sugestão de plano e implantação.</p>
+          <p>Você recebe o valor considerando a base do plano e os acréscimos de escopo.</p>
         </div>
       </div>
     </div>
@@ -150,8 +143,8 @@
       <details class="faq-item">
         <summary>O valor é fixo para todas as empresas?</summary>
         <p>
-          O preço pode variar conforme complexidade, volume, integrações e nível
-          de personalização do atendimento.
+          Não. O valor varia conforme a quantidade de workflows escolhidos, a
+          complexidade da operação e o nível de personalização necessário.
         </p>
       </details>
 
@@ -166,8 +159,8 @@
       <details class="faq-item">
         <summary>Consigo começar com uma versão simples?</summary>
         <p>
-          Sim. A ideia é iniciar com um fluxo bem definido e evoluir conforme a
-          operação ganha maturidade.
+          Sim. Você pode começar com uma estrutura menor, como 5 workflows, e
+          ampliar depois para 10 ou 15 conforme a operação evolui.
         </p>
       </details>
     </div>
