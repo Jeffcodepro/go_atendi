@@ -5,12 +5,16 @@
       <%= content_for?(:page_title) ? "#{yield(:page_title)} | GO ATendi" : "GO ATendi | Atendimento inteligente para empresas" %>
     </title>
 
+    <meta charset="utf-8">
     <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : 'GO ATendi é uma plataforma de atendimento inteligente para empresas que querem automatizar conversas, organizar leads e vender mais.' %>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#06a84f">
+    <meta name="theme-color" content="#6b21a8">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= favicon_link_tag "favicon.webp", rel: "icon", type: "image/webp" %>
+    <%= favicon_link_tag "favicon.webp", rel: "shortcut icon", type: "image/webp" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>

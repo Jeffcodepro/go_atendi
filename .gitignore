@@ -30,6 +30,7 @@
 !/tmp/storage/.keep
 
 /public/assets
+/go_atendi.tar
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
@@ -40,9 +41,3 @@
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
-
-# Docker image exports
-*.tar
-*.tar.gz
-go_atendi.tar
-go_atendi_latest.tar.gz

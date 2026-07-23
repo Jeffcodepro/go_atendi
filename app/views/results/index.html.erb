@@ -1,3 +1,5 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <% content_for :page_title, "Resultado" %>
 <% content_for :meta_description, "Entenda os resultados que o GO ATendi pode gerar para empresas: mais agilidade, organização comercial e menos oportunidades perdidas." %>
 
@@ -16,7 +18,7 @@
         de acompanhamento.
       </p>
 
-      <%= link_to "Quero melhorar meu atendimento", new_user_registration_path(interest: "resultados"), class: "btn btn--primary btn--large" %>
+      <%= link_to "Quero melhorar meu atendimento", app_login_url, class: "btn btn--primary btn--large" %>
     </div>
 
     <div class="page-hero__panel page-hero__panel--stats">
@@ -157,6 +159,6 @@
       responder, organizar e vender melhor.
     </p>
 
-    <%= link_to "Inscrever-se", new_user_registration_path(interest: "resultados"), class: "btn btn--primary btn--large" %>
+    <%= link_to "Inscrever-se", app_login_url, class: "btn btn--primary btn--large" %>
   </div>
 </section>

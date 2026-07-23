@@ -1,3 +1,5 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <% content_for :page_title, "Atendimento inteligente para vender mais" %>
 <% content_for :meta_description, "GO ATendi centraliza conversas, automatiza atendimentos e ajuda empresas a vender mais pelo WhatsApp e canais digitais." %>
 
@@ -11,8 +13,7 @@
       <span class="eyebrow">Atendimento com automação e inteligência</span>
 
       <h1>
-        Transforme conversas em vendas com o
-        <span>GO ATendi</span>
+        Transforme conversas em vendas com o <span>GO&nbsp;ATendi</span>
       </h1>
 
       <p>
@@ -21,7 +22,7 @@
       </p>
 
       <div class="hero-section__actions">
-        <%= link_to "Quero me inscrever", new_user_registration_path, class: "btn btn--primary btn--large" %>
+        <%= link_to "Quero me inscrever", app_login_url, class: "btn btn--primary btn--large" %>
         <%= link_to "Ver funcionalidades", funcionalidades_path, class: "btn btn--secondary btn--large" %>
       </div>
 
@@ -66,12 +67,12 @@
 <section class="section">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow">Por que o GO ATendi?</span>
+      <span class="eyebrow">Por que o GO Atendi?</span>
 
       <h2>Uma operação comercial mais organizada desde o primeiro contato</h2>
 
       <p>
-        O GO ATendi foi pensado para empresas que recebem mensagens todos os dias
+        O GO Atendi foi pensado para empresas que recebem mensagens todos os dias
         e precisam responder com agilidade sem perder qualidade no atendimento.
       </p>
     </div>
@@ -121,7 +122,7 @@
       <h2>Feito para quem vende, atende e precisa acompanhar cada oportunidade</h2>
 
       <p>
-        Da primeira mensagem até o encaminhamento para um vendedor, o GO ATendi
+        Da primeira mensagem até o encaminhamento para um vendedor, o GO Atendi
         ajuda sua empresa a construir uma experiência mais fluida.
       </p>
 
@@ -205,7 +206,7 @@
         <h2>De mensagens soltas para uma operação acompanhada</h2>
 
         <p>
-          Com o GO ATendi, sua empresa sai de um atendimento manual e difícil de
+          Com o GO Atendi, sua empresa sai de um atendimento manual e difícil de
           acompanhar para um fluxo mais claro, organizado e preparado para vender melhor.
         </p>
       </div>
@@ -239,7 +240,7 @@
 
         <div class="go-before-after__column go-before-after__column--after">
           <div class="go-before-after__title">
-            <span>Com GO ATendi</span>
+            <span>Com GO Atendi</span>
           </div>
 
           <div class="go-before-after__item">
@@ -282,11 +283,11 @@
 
     <p>
       Inscreva-se para receber uma apresentação do produto e entender como o
-      GO ATendi pode se encaixar na sua operação.
+      GO Atendi pode se encaixar na sua operação.
     </p>
 
     <div class="final-cta__actions">
-      <%= link_to "Quero me inscrever", new_user_registration_path, class: "btn btn--primary btn--large" %>
+      <%= link_to "Quero me inscrever", app_login_url, class: "btn btn--primary btn--large" %>
       <%= link_to "Ver funcionalidades", funcionalidades_path, class: "btn btn--secondary btn--large" %>
     </div>
   </div>

@@ -1,0 +1,195 @@
+/* =========================
+   AJUSTES FINOS DAS PÁGINAS DE MARKETING
+   Home, Soluções, Funcionalidades, Resultado e Preço
+========================= */
+
+html,
+body,
+body.go-atendi-body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page-hero,
+.section,
+.hero-section,
+.go-before-after-section,
+.go-footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page-hero .container,
+.section .container,
+.hero-section .container,
+.go-before-after-section .container,
+.go-footer .container {
+  min-width: 0;
+}
+
+.page-hero--center {
+  min-height: auto;
+  padding: clamp(88px, 9vw, 132px) 0 clamp(72px, 8vw, 106px);
+  text-align: center;
+}
+
+.page-hero--center .container {
+  max-width: 1060px;
+}
+
+.page-hero--center .eyebrow {
+  justify-content: center;
+}
+
+.page-hero--center h1 {
+  max-width: 980px;
+  margin: 22px auto 0;
+  font-size: clamp(3rem, 6vw, 5.7rem);
+  line-height: 0.96;
+  letter-spacing: -0.075em;
+  text-align: center;
+}
+
+.page-hero--center p {
+  max-width: 760px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+
+.pricing-hero {
+  padding-top: clamp(92px, 9vw, 136px);
+  padding-bottom: clamp(74px, 7vw, 104px);
+}
+
+.pricing-hero h1 {
+  max-width: 960px;
+}
+
+.pricing-section {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.08), transparent 34%),
+    #ffffff;
+}
+
+.pricing-shell {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.pricing-card__header,
+.pricing-card__price,
+.pricing-card__features,
+.workflow-scale,
+.pricing-card__footnote {
+  min-width: 0;
+}
+
+.workflow-scale {
+  width: 100%;
+}
+
+.workflow-scale__item {
+  min-width: 0;
+}
+
+.workflow-scale__item strong,
+.workflow-scale__item span,
+.workflow-scale__item p,
+.pricing-card__features li,
+.pricing-card__price span,
+.pricing-card__footnote {
+  overflow-wrap: anywhere;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1080px) {
+  .page-hero__grid,
+  .split-section,
+  .feature-highlight {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pricing-shell {
+    max-width: 860px;
+  }
+
+  .workflow-scale {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page-hero--center {
+    padding: 68px 0 56px;
+  }
+
+  .page-hero--center h1 {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 12vw, 3.45rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .page-hero--center p {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .pricing-hero {
+    padding-top: 66px;
+    padding-bottom: 54px;
+  }
+
+  .pricing-card--custom {
+    padding: 24px;
+  }
+
+  .pricing-card__header h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .workflow-scale {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pricing-card__badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .pricing-card .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-hero--center h1 {
+    font-size: clamp(2.05rem, 13vw, 2.9rem);
+  }
+
+  .pricing-card--custom {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .pricing-card__price {
+    margin: 24px 0;
+    padding: 20px 0;
+  }
+}
