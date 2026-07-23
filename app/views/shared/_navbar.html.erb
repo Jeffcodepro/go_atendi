@@ -1,10 +1,11 @@
 <% active_nav = ->(path) { current_page?(path) ? "is-active" : "" } %>
+<% app_login_url = "https://app.goatendi.com/app/login" %>
 
 <header class="marketing-nav">
   <div class="marketing-nav__shell">
     <%= link_to root_path, class: "marketing-nav__brand", aria: { label: "Ir para a página inicial do GO ATendi" } do %>
       <span class="marketing-nav__logo-frame">
-        <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "marketing-nav__logo" %>
+        <%= image_tag "go-atendi-logo.webp", alt: "GO ATendi", class: "marketing-nav__logo" %>
       </span>
     <% end %>
 
@@ -16,8 +17,8 @@
     </nav>
 
     <div class="marketing-nav__actions">
-      <%= link_to "Inscrever-se", new_user_registration_path, class: "btn btn--primary btn--nav #{active_nav.call(new_user_registration_path)}" %>
-      <%= link_to "Entrar", new_user_session_path, class: "btn btn--ghost btn--nav #{active_nav.call(new_user_session_path)}" %>
+      <%= link_to "Inscrever-se", app_login_url, class: "btn btn--primary btn--nav" %>
+      <%= link_to "Entrar", app_login_url, class: "btn btn--ghost btn--nav" %>
     </div>
 
     <details class="marketing-nav__mobile">
@@ -34,8 +35,8 @@
         <%= link_to "Preço", preco_path, class: "marketing-nav__mobile-link #{active_nav.call(preco_path)}" %>
 
         <div class="marketing-nav__mobile-actions">
-          <%= link_to "Inscrever-se", new_user_registration_path, class: "btn btn--primary btn--full" %>
-          <%= link_to "Entrar", new_user_session_path, class: "btn btn--ghost btn--nav #{active_nav.call(new_user_session_path)}" %>
+          <%= link_to "Inscrever-se", app_login_url, class: "btn btn--primary btn--full" %>
+          <%= link_to "Entrar", app_login_url, class: "btn btn--ghost btn--full" %>
         </div>
       </div>
     </details>

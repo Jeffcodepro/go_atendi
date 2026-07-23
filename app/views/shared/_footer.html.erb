@@ -1,9 +1,11 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <footer class="go-footer">
   <div class="container">
     <div class="go-footer__main">
       <div class="go-footer__brand">
         <%= link_to root_path, class: "go-footer__logo-link", aria: { label: "Ir para a página inicial do GO ATendi" } do %>
-          <%= image_tag "go-atendi-logo.png", alt: "GO ATendi", class: "go-footer__logo" %>
+          <%= image_tag "go-atendi-logo.webp", alt: "GO ATendi", class: "go-footer__logo" %>
         <% end %>
 
         <p class="go-footer__description">
@@ -17,6 +19,20 @@
             <span>(11) 99664-5302</span>
           </div>
 
+          <div class="go-footer__contact-item">
+            <i class="fa-solid fa-building"></i>
+            <span>56.365.822 YURI HERMENEGILDO GOMES</span>
+          </div>
+
+          <div class="go-footer__contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>contato@sollucion.com</span>
+          </div>
+
+          <div class="go-footer__contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Rua Clemente Argolo - São Paulo, SP 05784090</span>
+          </div>
         </div>
 
         <div class="go-footer__socials">
@@ -43,17 +59,17 @@
             <li><%= link_to "Funcionalidades", funcionalidades_path %></li>
             <li><%= link_to "Resultado", resultado_path %></li>
             <li><%= link_to "Preço", preco_path %></li>
-            <li><%= link_to "Inscrever-se", new_user_registration_path %></li>
+            <li><%= link_to "Inscrever-se", app_login_url %></li>
           </ul>
         </div>
 
         <div class="go-footer__column">
-          <h3>Recursos</h3>
+          <h3>Acesso</h3>
 
           <ul>
-            <li><%= link_to "Blog", "#" %></li>
-            <li><%= link_to "Central de ajuda", "#" %></li>
-            <li><%= link_to "Demonstração", new_user_registration_path %></li>
+            <li><%= link_to "Demonstração", app_login_url %></li>
+            <li><%= link_to "Entrar", app_login_url %></li>
+            <li><%= link_to "Criar conta", app_login_url %></li>
           </ul>
         </div>
 
@@ -75,6 +91,7 @@
       <div class="go-footer__legal">
         <span>© <%= Time.current.year %> GO ATendi. Desenvolvido por Sollucion</span>
         <span>CNPJ: 56.365.822/0001-20</span>
+        <span>Rua Clemente Argolo - São Paulo, SP 05784090</span>
         <span>Todos os direitos reservados</span>
       </div>
 

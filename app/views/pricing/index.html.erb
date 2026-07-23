@@ -1,3 +1,5 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <% content_for :page_title, "Preço" %>
 <% content_for :meta_description, "Conheça os planos do GO ATendi para empresas que querem automatizar atendimento, organizar leads e vender melhor." %>
 
@@ -19,7 +21,7 @@
   }
 ] %>
 
-<section class="page-hero page-hero--center">
+<section class="page-hero page-hero--center pricing-hero">
   <div class="container">
     <span class="eyebrow">Preço</span>
 
@@ -35,11 +37,11 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section pricing-section">
   <div class="container">
     <div class="pricing-shell">
       <article class="pricing-card pricing-card--custom pricing-card--highlighted">
-        <span class="pricing-card__badge">Plano unico</span>
+        <span class="pricing-card__badge">Plano único</span>
 
         <div class="pricing-card__header">
           <h2>Plano personalizado</h2>
@@ -51,7 +53,7 @@
 
         <div class="pricing-card__price">
           <strong>Sob consulta</strong>
-          <span>valor montado de acordo com a quantidade de workflows e o escopo da implantação</span>
+          <span>Valor montado de acordo com a quantidade de workflows e o escopo da implantação.</span>
         </div>
 
         <ul class="pricing-card__features">
@@ -76,7 +78,7 @@
           personalização e o investimento da proposta.
         </p>
 
-        <%= link_to "Solicitar proposta personalizada", new_user_registration_path(interest: "preco"), class: "btn btn--primary btn--full" %>
+        <%= link_to "Solicitar proposta personalizada", app_login_url, class: "btn btn--primary btn--full" %>
       </article>
     </div>
   </div>
@@ -93,7 +95,7 @@
         automação faz mais sentido para a operação.
       </p>
 
-      <%= link_to "Solicitar diagnóstico", new_user_registration_path(interest: "preco"), class: "btn btn--primary" %>
+      <%= link_to "Solicitar diagnóstico", app_login_url, class: "btn btn--primary" %>
     </div>
 
     <div class="process-card">

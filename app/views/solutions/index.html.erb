@@ -1,3 +1,5 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <% content_for :page_title, "Soluções" %>
 <% content_for :meta_description, "Conheça as soluções do GO ATendi para captação, qualificação, pré-atendimento e organização comercial." %>
 
@@ -15,7 +17,7 @@
         operação mais organizada, com automação, direcionamento e acompanhamento.
       </p>
 
-      <%= link_to "Quero conhecer", new_user_registration_path(interest: "solucoes"), class: "btn btn--primary btn--large" %>
+      <%= link_to "Quero conhecer", app_login_url, class: "btn btn--primary btn--large" %>
     </div>
 
     <div class="page-hero__panel">
@@ -144,6 +146,6 @@
       gerar mais impacto para sua empresa.
     </p>
 
-    <%= link_to "Inscrever-se", new_user_registration_path(interest: "solucoes"), class: "btn btn--primary btn--large" %>
+    <%= link_to "Inscrever-se", app_login_url, class: "btn btn--primary btn--large" %>
   </div>
 </section>

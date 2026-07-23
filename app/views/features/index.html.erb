@@ -1,3 +1,5 @@
+<% app_login_url = "https://app.goatendi.com/app/login" %>
+
 <% content_for :page_title, "Funcionalidades" %>
 <% content_for :meta_description, "Veja as funcionalidades do GO ATendi para atendimento automatizado, qualificação de leads, organização comercial e acompanhamento de conversas." %>
 
@@ -15,7 +17,7 @@
         acompanhamento para ajudar sua empresa a responder melhor.
       </p>
 
-      <%= link_to "Quero testar o GO ATendi", new_user_registration_path(interest: "funcionalidades"), class: "btn btn--primary btn--large" %>
+      <%= link_to "Quero testar o GO ATendi", app_login_url, class: "btn btn--primary btn--large" %>
     </div>
 
     <div class="page-hero__panel">
@@ -137,6 +139,6 @@
       tipo de negócio.
     </p>
 
-    <%= link_to "Inscrever-se", new_user_registration_path(interest: "funcionalidades"), class: "btn btn--primary btn--large" %>
+    <%= link_to "Inscrever-se", app_login_url, class: "btn btn--primary btn--large" %>
   </div>
 </section>
